@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "기업 홈페이지, 웹 애플리케이션, 업무 자동화, 유지보수를 홈페이지에서 문의합니다. 접수한 내용은 대표 메일로 전달됩니다.",
   alternates: { canonical: "/contact" },
+  openGraph: { url: "/contact" },
 };
 
 export default function ContactPage() {

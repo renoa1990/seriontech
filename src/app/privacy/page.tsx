@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     "세리온테크 문의에서 확인하는 항목과 전달 방법을 안내합니다. 문의는 데이터베이스에 저장하지 않고 대표 메일로 전달합니다.",
   alternates: { canonical: "/privacy" },
+  openGraph: { url: "/privacy" },
 };
 
 const sections = [

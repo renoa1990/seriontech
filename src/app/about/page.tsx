@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "세리온테크는 기업 홈페이지, 반응형 웹사이트, 관리자 페이지, 웹 애플리케이션, 업무 자동화를 개발합니다. 착수 전에 작업 범위와 비용을 정합니다.",
   alternates: { canonical: "/about" },
+  openGraph: { url: "/about" },
 };
 
 export default function AboutPage() {

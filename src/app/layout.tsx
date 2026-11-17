@@ -24,22 +24,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: site.url,
     siteName: site.name,
-    title: "세리온테크 | 기업 홈페이지·업무 시스템 개발",
-    description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "세리온테크 | 기업 홈페이지·업무 시스템 개발",
-    description: site.description,
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: "/",
   },
 };
 

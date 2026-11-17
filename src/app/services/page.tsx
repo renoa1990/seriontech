@@ -5,7 +5,7 @@ import { PackageList } from "@/components/PackageList";
 import {
   addons,
   homepageIncludes,
-  maintenanceExcluded,
+  maintenanceNotes,
   maintenancePlans,
   packages,
   quoteNotice,
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   description:
     "세리온테크의 기업 홈페이지 제작, 반응형 웹사이트, 관리자 페이지, 업무 자동화, 유지보수의 범위와 가격입니다. 로그인, 결제, 관리자 기능은 별도 견적입니다.",
   alternates: { canonical: "/services" },
+  openGraph: { url: "/services" },
 };
 
 export default function ServicesPage() {
@@ -133,10 +134,10 @@ export default function ServicesPage() {
 
       <section id="maintenance" className="scroll-mt-24 bg-paper">
         <Container className="py-12 lg:py-14">
-          <h2 className="text-3xl font-semibold tracking-[-0.03em]">유지보수</h2>
+          <h2 className="text-3xl font-semibold tracking-[-0.03em]">홈페이지 유지보수</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
-            납품 이후의 점검과 작은 수정을 월 단위로 진행합니다. 아래가 각 금액에 포함되는 범위이고, 같은 내용을
-            계약서에 적습니다.
+            홈페이지는 제작 이후에도 지속적인 관리가 필요합니다. 세리온테크는 정기 점검과 콘텐츠 수정, 오류 확인,
+            기술 지원으로 운영을 돕습니다.
           </p>
           <div className="mt-8 grid items-stretch gap-4 lg:grid-cols-3">
             {maintenancePlans.map((item) => (
@@ -146,14 +147,7 @@ export default function ServicesPage() {
                 <p className="mt-2 text-sm text-muted">{item.meta}</p>
                 <p className="mt-5 text-sm leading-7 text-[#c5d0df]">{item.summary}</p>
                 <dl className="mt-5 space-y-3 border-t border-white/15 pt-5 text-sm leading-6">
-                  {[
-                    ["정기 점검", item.check],
-                    ["오류 수정", item.bugs],
-                    ["문구·이미지", item.content],
-                    ["요청", item.requests],
-                    ["대응", item.response],
-                    ["별도 견적", maintenanceExcluded],
-                  ].map(([label, value]) => (
+                  {item.points.map(([label, value]) => (
                     <div key={label}>
                       <dt className="text-[#8adfff]">{label}</dt>
                       <dd className="mt-1">{value}</dd>
@@ -163,10 +157,14 @@ export default function ServicesPage() {
               </article>
             ))}
           </div>
-          <p className="mt-6 max-w-3xl text-sm leading-7 text-muted">
-            횟수를 넘기거나 새 페이지가 필요하면 따로 견적합니다. 무제한 수정과 무제한 개발은 하지 않습니다. 이미 운영
-            중인 사이트의 단건 수정도 범위를 보고 진행합니다.
-          </p>
+          <div className="mt-6 max-w-3xl text-sm leading-7 text-muted">
+            <h3 className="font-semibold text-white">공통 안내</h3>
+            <ul className="mt-3 space-y-2">
+              {maintenanceNotes.map((note) => (
+                <li key={note}>{note}</li>
+              ))}
+            </ul>
+          </div>
         </Container>
       </section>
 
