@@ -1,0 +1,276 @@
+export const site = {
+  name: "세리온테크",
+  englishName: "SerionTech",
+  url: "https://seriontech.co.kr",
+  email: "seriontech@seriontech.co.kr",
+  contactName: "김지민",
+  representative: "김지민",
+  businessNumber: "834-12-03043",
+  address: "경기도 용인시 기흥구 구성로279번길 23",
+  businessType: "정보통신업",
+  businessItems: ["응용 소프트웨어 개발 및 공급업", "컴퓨터 프로그래밍 서비스업"],
+  year: 2026,
+  description:
+    "기업과 매장의 홈페이지, 웹 업무 시스템, 업무 자동화를 개발합니다. Next.js 기반 반응형 웹, 관리자 페이지, 유지보수를 제공합니다.",
+} as const;
+
+export const images = {
+  desk: "/images/studio-quiet.jpg",
+  notes: "/images/notes-still.jpg",
+  side: "/images/side-desk.jpg",
+} as const;
+
+export const nav = [
+  { href: "/#about", label: "소개" },
+  { href: "/#services", label: "서비스" },
+  { href: "/#work", label: "작업" },
+  { href: "/#process", label: "진행" },
+] as const;
+
+export const mobileNav = [
+  { href: "/", label: "홈", emoji: "🏠" },
+  { href: "/#about", label: "소개", emoji: "🏢" },
+  { href: "/#services", label: "서비스", emoji: "💻" },
+  { href: "/#work", label: "작업", emoji: "🗂️" },
+  { href: "/contact", label: "문의하기", emoji: "✉️" },
+] as const;
+
+export const homeServices = [
+  {
+    index: "01",
+    emoji: "🌐",
+    title: "기업 홈페이지",
+    line: "반응형 웹사이트 제작",
+    text: "회사와 매장, 서비스와 제품을 설명하고 문의로 이어지는 사이트를 만듭니다.",
+    href: "/services#packages",
+  },
+  {
+    index: "02",
+    emoji: "🗂️",
+    title: "관리자 시스템",
+    line: "업무용 웹 시스템 개발",
+    text: "신청, 예약, 고객, 진행 상황을 화면에서 처리하는 관리 기능을 만듭니다.",
+    href: "/services#systems",
+  },
+  {
+    index: "03",
+    emoji: "⚡",
+    title: "업무 자동화",
+    line: "반복 업무 효율화",
+    text: "반복 입력, 알림, 자료 정리처럼 손으로 하던 일을 줄이는 흐름을 만듭니다.",
+    href: "/services#systems",
+  },
+  {
+    index: "04",
+    emoji: "🔧",
+    title: "유지보수",
+    line: "기존 서비스 개선",
+    text: "이미 있는 사이트의 오류, 화면, 속도를 고치고 운영을 이어 갑니다.",
+    href: "/services#maintenance",
+  },
+] as const;
+
+export const portfolio = [
+  {
+    title: "세리온테크 공식 사이트",
+    text: "기업 소개와 문의로 이어지도록 직접 만든 웹사이트입니다.",
+    kind: "자체 제작",
+    tags: ["기업 홈페이지", "반응형"],
+    image: images.notes,
+  },
+  {
+    title: "업무 화면",
+    text: "운영에 쓰는 화면의 예시입니다. 고객 납품 사례가 아닙니다.",
+    kind: "화면 예시",
+    tags: ["업무 시스템", "샘플"],
+    image: images.side,
+  },
+] as const;
+
+export const homeProcess = [
+  { index: "01", emoji: "💬", title: "상담", text: "목적, 참고 사이트, 지금 쓰는 방식을 확인합니다." },
+  { index: "02", emoji: "📝", title: "기획", text: "페이지, 기능, 일정, 비용, 수정 횟수를 문서로 정리합니다." },
+  { index: "03", emoji: "✏️", title: "디자인", text: "화면 구성과 분위기를 맞춘 뒤 개발로 넘어갑니다." },
+  { index: "04", emoji: "💻", title: "개발", text: "정한 범위 안에서 만들고, 중간 결과를 보여 드립니다." },
+  { index: "05", emoji: "✅", title: "납품 및 유지보수", text: "검수와 배포를 마칩니다. 이후 운영은 범위를 정해 이어 갑니다." },
+] as const;
+
+export const packages = [
+  {
+    code: "STANDARD",
+    price: "390,000원",
+    days: "5일",
+    pages: "1페이지",
+    summary: "서비스 하나를 설명하는 랜딩형 홈페이지",
+    featured: false,
+    items: [
+      { emoji: "🏢", text: "기업·서비스 기본 소개" },
+      { emoji: "📱", text: "반응형 화면" },
+      { emoji: "✉️", text: "문의로 이어지는 단일 페이지" },
+    ],
+  },
+  {
+    code: "DELUXE",
+    price: "790,000원",
+    days: "10일",
+    pages: "최대 5페이지",
+    summary: "회사 소개와 서비스 안내가 나뉜 기업 홈페이지",
+    featured: true,
+    items: [
+      { emoji: "🧩", text: "맞춤 페이지 구성" },
+      { emoji: "🏢", text: "회사 소개와 서비스 안내" },
+      { emoji: "✉️", text: "문의 페이지" },
+      { emoji: "📱", text: "반응형 화면" },
+    ],
+  },
+  {
+    code: "PREMIUM",
+    price: "1,490,000원",
+    days: "15일",
+    pages: "최대 8페이지",
+    summary: "페이지와 콘텐츠가 더 많은 맞춤 홈페이지",
+    featured: false,
+    items: [
+      { emoji: "✨", text: "고급 맞춤 디자인" },
+      { emoji: "📚", text: "다양한 콘텐츠 페이지" },
+      { emoji: "📱", text: "반응형 화면" },
+      { emoji: "🗣️", text: "페이지별 구성 협의" },
+    ],
+  },
+] as const;
+
+export const addons = [
+  { emoji: "✏️", name: "추가 수정", price: "30,000원", unit: "1회" },
+  { emoji: "📄", name: "페이지 추가", price: "80,000원", unit: "1페이지" },
+  { emoji: "➕", name: "간단한 기능 추가", price: "100,000원", unit: "1개" },
+] as const;
+
+export const separateQuote = [
+  { emoji: "🔐", text: "로그인과 회원 관리" },
+  { emoji: "🗂️", text: "관리자 시스템" },
+  { emoji: "💳", text: "결제" },
+  { emoji: "🗄️", text: "데이터베이스 설계가 필요한 기능" },
+  { emoji: "🔌", text: "외부 API 연동" },
+] as const;
+
+export const homepageIncludes = [
+  { emoji: "📱", text: "PC, 태블릿, 모바일 반응형" },
+  { emoji: "🔍", text: "페이지 제목과 설명 등 기본 검색 정보" },
+  { emoji: "🌐", text: "도메인 연결 및 배포 지원" },
+  { emoji: "✏️", text: "계약 전에 정한 횟수 안의 수정" },
+] as const;
+
+export const maintenancePlans = [
+  { emoji: "🌱", name: "기본형", price: "월 30,000원" },
+  { emoji: "🌿", name: "일반형", price: "월 50,000원" },
+  { emoji: "🌳", name: "확장형", price: "월 100,000원" },
+] as const;
+
+export const systems = [
+  { emoji: "📥", name: "간단한 신청·접수", price: "요구사항 확인 후 견적" },
+  { emoji: "📅", name: "예약 관리", price: "약 690,000원부터 검토" },
+  { emoji: "👥", name: "고객·회원 관리", price: "기능에 따라 별도 견적" },
+  { emoji: "⚡", name: "업무 자동화", price: "요구사항 확인 후 견적" },
+  { emoji: "🧑‍💼", name: "관리자 시스템", price: "약 1,500,000원부터 검토" },
+  { emoji: "🧩", name: "복잡한 업무 시스템", price: "요구사항 분석 후 개별 견적" },
+] as const;
+
+export const systemExamples = [
+  { emoji: "🏪", text: "매장과 팀의 고객 관리" },
+  { emoji: "🎨", text: "공방, 학원의 예약 관리" },
+  { emoji: "💬", text: "상담과 문의 접수" },
+  { emoji: "📋", text: "직원과 업무 진행 관리" },
+  { emoji: "📊", text: "엑셀로 하던 업무의 웹 전환" },
+  { emoji: "⚡", text: "반복 입력, 알림, 자료 정리처럼 손으로 하던 일의 자동화" },
+] as const;
+
+export const offers = [
+  {
+    index: "01",
+    emoji: "🖥️",
+    title: "기업 홈페이지",
+    text: "회사, 브랜드, 서비스, 제품을 설명하고 문의로 연결합니다. 없는 사이트를 새로 만들거나, 있는 사이트를 다시 구성합니다.",
+    href: "/services#packages",
+  },
+  {
+    index: "02",
+    emoji: "📊",
+    title: "웹 업무 시스템",
+    text: "신청, 예약, 고객 관리, 반복 업무 자동화, 관리자 화면처럼 운영에 쓰는 기능을 만듭니다. 화면과 데이터에 따라 따로 견적합니다.",
+    href: "/services#systems",
+  },
+  {
+    index: "03",
+    emoji: "🔧",
+    title: "개선과 유지보수",
+    text: "오류, 화면, 속도, 작은 기능을 고칩니다. 납품 이후에는 월 단위로 운영 상태를 볼 수도 있습니다.",
+    href: "/services#maintenance",
+  },
+] as const;
+
+export const steps = [
+  { emoji: "💬", title: "상담", text: "목적, 참고 사이트, 지금 쓰는 방식을 확인합니다." },
+  { emoji: "📐", title: "범위", text: "페이지, 기능, 일정, 비용, 수정 횟수를 정리합니다." },
+  { emoji: "📝", title: "계약", text: "견적서와 용역계약서로 작업 범위를 확정합니다." },
+  { emoji: "🛠️", title: "개발", text: "중간 결과물을 보여 주며 협의된 범위로 만듭니다." },
+  { emoji: "🔍", title: "검수", text: "계약된 범위 안에서 확인하고, 필요한 보완을 반영합니다." },
+  { emoji: "🚀", title: "납품", text: "배포와 정산을 마칩니다. 원하시면 유지보수를 이어 갑니다." },
+] as const;
+
+export const fits = [
+  { emoji: "🏪", text: "회사나 매장을 설명할 사이트가 필요할 때" },
+  { emoji: "📨", text: "메신저와 엑셀로 받던 신청을 웹으로 옮길 때" },
+  { emoji: "⚡", text: "반복해서 하던 업무를 자동으로 처리하고 싶을 때" },
+  { emoji: "🔧", text: "있는 사이트의 오류와 화면을 고칠 때" },
+  { emoji: "🗂️", text: "관리자 화면이 있는 업무 시스템이 필요할 때" },
+] as const;
+
+export const principles = [
+  {
+    emoji: "🎯",
+    title: "필요한 구조만 둡니다",
+    text: "모든 프로젝트에 서버와 데이터베이스를 넣지 않습니다. 소개 사이트면 소개 사이트로 끝내고, 데이터를 다뤄야 할 때만 시스템을 붙입니다.",
+  },
+  {
+    emoji: "📄",
+    title: "시작 전에 범위를 적습니다",
+    text: "페이지, 기능, 디자인 방향, 일정, 비용, 수정 횟수를 문서로 정한 뒤 개발합니다.",
+  },
+  {
+    emoji: "⚖️",
+    title: "추가 개발과 오류 수정을 나눕니다",
+    text: "계약 범위 안의 오류는 하자로 보완합니다. 새 페이지, 새 기능, 디자인 전면 변경은 별도 작업입니다.",
+  },
+  {
+    emoji: "🏷️",
+    title: "샘플과 납품을 구분합니다",
+    text: "고객 납품 사례는 공개 동의를 받은 것만 올립니다. 자체 제작 예시는 샘플이라고 표시합니다.",
+  },
+] as const;
+
+export const stack = [
+  { emoji: "🖥️", label: "화면", value: "Next.js, React, TypeScript" },
+  { emoji: "⚙️", label: "서버", value: "Node.js, Next.js. 필요할 때 NestJS" },
+  { emoji: "🗄️", label: "데이터", value: "PostgreSQL, MySQL, Prisma. 필요할 때 Redis" },
+  { emoji: "☁️", label: "배포", value: "Vercel, Cloudflare. 규모에 따라 AWS" },
+] as const;
+
+export const inquiryKinds = [
+  { emoji: "💻", label: "기업 홈페이지 제작" },
+  { emoji: "🔄", label: "홈페이지 리뉴얼" },
+  { emoji: "📊", label: "맞춤 웹 시스템" },
+  { emoji: "⚡", label: "업무 자동화" },
+  { emoji: "🔧", label: "유지보수" },
+  { emoji: "✨", label: "기타" },
+] as const;
+
+export const contactPrompts = [
+  { emoji: "🎯", text: "만들고 싶은 것의 목적" },
+  { emoji: "🔗", text: "참고하고 싶은 사이트" },
+  { emoji: "🧩", text: "필요한 페이지나 기능" },
+  { emoji: "🌐", text: "현재 홈페이지 주소" },
+  { emoji: "📅", text: "희망 일정" },
+] as const;
+
+export const quoteNotice =
+  "안내 금액은 확인된 요구사항을 기준으로 한 것입니다. 개발을 시작하기 전에 작업 범위와 기능을 정하고, 그 뒤에 바뀌거나 추가되는 내용은 일정과 금액을 다시 협의한 뒤 진행합니다.";
