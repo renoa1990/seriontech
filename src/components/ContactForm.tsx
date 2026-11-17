@@ -224,8 +224,8 @@ export function ContactForm() {
           className="mt-1"
         />
         <span>
-          개인정보 수집 및 이용에 동의합니다. 문의 접수와 회신에만 사용하며, 내용은 데이터베이스에 저장하지 않고 대표
-          메일로 전달합니다.{" "}
+          개인정보 수집 및 이용에 동의합니다. 문의 항목은 모두 필수이며, 문의 접수와 상담, 견적 회신에 사용합니다.
+          내용은 데이터베이스에 저장하지 않고 대표 메일로 전달하며, 처리가 끝난 뒤 1년간 보관합니다.{" "}
           <Link href="/privacy" className="underline underline-offset-4">
             개인정보 처리 안내
           </Link>
@@ -240,7 +240,7 @@ export function ContactForm() {
         {status === "sending" ? "보내는 중" : status === "success" ? "접수됨" : "문의 보내기"}
       </button>
       <p className="mt-4 text-sm leading-6 text-muted">
-        접수한 내용은 {site.email}로만 전달되고, 서버에는 저장하지 않습니다.
+        접수한 내용은 {site.email}로 전달됩니다. 데이터베이스에는 저장하지 않습니다.
       </p>
       {notice ? (
         <p className="mt-3 text-sm font-medium" role="status">
