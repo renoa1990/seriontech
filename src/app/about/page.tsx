@@ -4,14 +4,16 @@ import { Container } from "@/components/Container";
 import { OwnSite } from "@/components/OwnSite";
 import { PageHero } from "@/components/PageHero";
 import { WorkSamples } from "@/components/WorkSamples";
-import { principles, site, stack, strengths } from "@/lib/site";
+import { pageShare, principles, site, stack, strengths } from "@/lib/site";
+
+const title = "세리온테크 소개 | 홈페이지·웹 시스템 개발";
+const description =
+  "세리온테크는 기업 홈페이지, 반응형 웹사이트, 관리자 페이지, 웹 애플리케이션, 업무 자동화를 개발합니다. 착수 전에 작업 범위와 비용을 정합니다.";
 
 export const metadata: Metadata = {
-  title: "회사 소개",
-  description:
-    "세리온테크는 기업 홈페이지, 반응형 웹사이트, 관리자 페이지, 웹 애플리케이션, 업무 자동화를 개발합니다. 착수 전에 작업 범위와 비용을 정합니다.",
-  alternates: { canonical: "/about" },
-  openGraph: { url: "/about" },
+  title: { absolute: title },
+  description,
+  ...pageShare("/about", title, description),
 };
 
 export default function AboutPage() {

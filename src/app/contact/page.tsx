@@ -2,14 +2,16 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
-import { contactPrompts, site } from "@/lib/site";
+import { contactPrompts, pageShare, site } from "@/lib/site";
+
+const title = "홈페이지·웹 시스템 개발 문의 | 세리온테크";
+const description =
+  "홈페이지 제작, 관리자 시스템, 업무 자동화 개발 상담을 홈페이지에서 문의합니다. 접수한 내용은 대표 메일로 전달됩니다.";
 
 export const metadata: Metadata = {
-  title: "문의",
-  description:
-    "기업 홈페이지, 웹 애플리케이션, 업무 자동화, 유지보수를 홈페이지에서 문의합니다. 접수한 내용은 대표 메일로 전달됩니다.",
-  alternates: { canonical: "/contact" },
-  openGraph: { url: "/contact" },
+  title: { absolute: title },
+  description,
+  ...pageShare("/contact", title, description),
 };
 
 export default function ContactPage() {

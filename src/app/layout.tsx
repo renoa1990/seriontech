@@ -9,7 +9,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "세리온테크 | 기업 홈페이지·업무 시스템 개발",
+    default: "기업 홈페이지 제작·업무 시스템 개발 | 세리온테크",
     template: "%s | 세리온테크",
   },
   description: site.description,
@@ -24,10 +24,19 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    siteName: site.name,
+    siteName: "SERIONTECH",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "세리온테크 — 기업 홈페이지와 업무 시스템 개발",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,

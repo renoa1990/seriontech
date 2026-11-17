@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/Container";
-import { site } from "@/lib/site";
+import { pageShare, site } from "@/lib/site";
+
+const description =
+  "세리온테크 문의의 수집 항목, 메일 전달, 1년 보관, 열람과 삭제 요청 방법을 안내합니다. 문의는 데이터베이스에 저장하지 않습니다.";
 
 export const metadata: Metadata = {
   title: "개인정보 처리 안내",
-  description:
-    "세리온테크 문의의 수집 항목, 메일 전달, 1년 보관, 열람과 삭제 요청 방법을 안내합니다. 문의는 데이터베이스에 저장하지 않습니다.",
-  alternates: { canonical: "/privacy" },
-  openGraph: { url: "/privacy" },
+  description,
+  ...pageShare("/privacy", "개인정보 처리 안내 | 세리온테크", description),
 };
 
 const sections = [

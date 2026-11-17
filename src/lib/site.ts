@@ -14,6 +14,34 @@ export const site = {
     "기업 홈페이지와 반응형 웹사이트를 제작하고, 관리자 페이지와 웹 애플리케이션, 업무 자동화를 개발합니다. 작업 범위와 비용은 시작 전에 정합니다.",
 } as const;
 
+const shareImage = {
+  url: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: "세리온테크 — 기업 홈페이지와 업무 시스템 개발",
+} as const;
+
+export function pageShare(path: string, title: string, description: string) {
+  return {
+    alternates: { canonical: path },
+    openGraph: {
+      type: "website" as const,
+      locale: "ko_KR",
+      siteName: "SERIONTECH",
+      url: path,
+      title,
+      description,
+      images: [shareImage],
+    },
+    twitter: {
+      card: "summary_large_image" as const,
+      title,
+      description,
+      images: [shareImage.url],
+    },
+  };
+}
+
 export const images = {
   desk: "/images/studio-quiet.jpg",
   notes: "/images/notes-still.jpg",

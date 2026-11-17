@@ -9,17 +9,20 @@ import {
   maintenancePlans,
   packages,
   quoteNotice,
+  pageShare,
   separateQuote,
   systemExamples,
   systems,
 } from "@/lib/site";
 
+const title = "기업 홈페이지 제작·맞춤 웹 시스템 개발 | 세리온테크";
+const description =
+  "기업 홈페이지와 반응형 웹사이트를 제작하고, 관리자 시스템, 웹 애플리케이션, 업무 자동화와 API 연동, 홈페이지 유지보수의 범위와 가격을 안내합니다. 로그인, 결제, 관리자 기능은 별도 견적입니다.";
+
 export const metadata: Metadata = {
-  title: "서비스",
-  description:
-    "세리온테크의 기업 홈페이지 제작, 반응형 웹사이트, 관리자 페이지, 업무 자동화, 유지보수의 범위와 가격입니다. 로그인, 결제, 관리자 기능은 별도 견적입니다.",
-  alternates: { canonical: "/services" },
-  openGraph: { url: "/services" },
+  title: { absolute: title },
+  description,
+  ...pageShare("/services", title, description),
 };
 
 export default function ServicesPage() {
