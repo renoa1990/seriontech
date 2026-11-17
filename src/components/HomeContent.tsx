@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { OwnSite } from "@/components/OwnSite";
+import { WorkSamples } from "@/components/WorkSamples";
 import {
   addons,
   contactPrompts,
@@ -45,7 +46,7 @@ export function HomeContent({ framed = false }: { framed?: boolean }) {
                 만듭니다
               </h1>
               <p className="mt-4 max-w-md text-sm leading-7 text-[#c5d0df] sm:text-base">
-                {`${site.name}는 소개 화면에서 끝내지 않습니다. 문의, 예약, 반복 업무처럼 운영에 쓰는 곳까지 범위를 정하고 만듭니다.`}
+                {`${site.name}는 소개 페이지만 만들지 않습니다. 문의, 예약, 반복 업무처럼 운영에 쓰는 곳까지 범위를 정하고 만듭니다.`}
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <Link href="/contact" className="inline-flex bg-white px-5 py-3 text-sm font-medium text-[#080E1B]">
@@ -72,8 +73,9 @@ export function HomeContent({ framed = false }: { framed?: boolean }) {
               <p className="mt-2 text-2xl font-semibold tracking-[-0.04em]">{item.price}</p>
               <p className="mt-2 text-sm leading-6 text-[#c5d0df]">{item.summary}</p>
               <p className="mt-1 text-xs text-[#9aa8bc]">
-                {item.days} · {item.pages}
+                {item.name} · {item.days} · {item.pages}
               </p>
+              <p className="mt-1 text-xs leading-5 text-[#9aa8bc]">반응형과 문의 폼이 포함됩니다. 관리자 기능은 별도 견적입니다</p>
             </Link>
           ))}
         </div>
@@ -128,12 +130,20 @@ export function HomeContent({ framed = false }: { framed?: boolean }) {
       </section>
 
       {framed ? null : (
-        <section className="border-t border-white/10 bg-paper">
+        <section id="work" className="scroll-mt-24 border-t border-white/10 bg-paper">
           <Container className="py-12 lg:py-14">
             <p className="text-sm text-[#8adfff]">자체 제작</p>
             <h2 className="mt-2 text-3xl font-semibold tracking-[-0.03em]">세리온테크 공식 사이트</h2>
             <div className="mt-6">
               <OwnSite />
+            </div>
+            <h2 className="mt-12 text-3xl font-semibold tracking-[-0.03em]">작업 예시</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
+              고객에게 납품한 사례가 아닙니다. 관리자, 예약, 업무 자동화처럼 만들 수 있는 화면의 예시입니다. 눌러
+              볼 수 있는 데모는 준비가 끝나면 올립니다.
+            </p>
+            <div className="mt-6">
+              <WorkSamples />
             </div>
           </Container>
         </section>
@@ -155,14 +165,18 @@ export function HomeContent({ framed = false }: { framed?: boolean }) {
               ))}
             </ul>
             <p className="mt-4 border-t border-white/10 pt-4 text-sm leading-6 text-muted">
-              유지보수는 {maintenancePlans.map((item) => `${item.name} ${item.price}`).join(", ")}. 정확한 범위는
-              계약으로 정하고, 새 페이지와 기능, 데이터베이스 변경은 포함하지 않습니다.
+              유지보수는 {`${maintenancePlans.map((item) => `${item.name} ${item.price}`).join(", ")}입니다.`} 새
+              페이지와 기능, 데이터베이스 변경, 외부 API 추가는 포함하지 않고, 서버와 도메인, 유료 서비스 이용료도
+              포함하지 않습니다.{" "}
+              <Link href="/services#maintenance" className="text-[#8adfff] underline underline-offset-4">
+                유지보수 범위
+              </Link>
             </p>
           </div>
           <div className="border-t border-white/10 px-5 py-12 sm:px-8 lg:border-t-0 lg:border-l lg:py-14 lg:pr-[max(2rem,calc((100vw-1180px)/2+2rem))] lg:pl-12">
             <h2 className="text-3xl font-semibold tracking-[-0.03em]">만들 수 있는 예</h2>
             <p className="mt-3 max-w-md text-sm leading-7 text-[#c5d0df]">
-              고객 납품 사례가 아닙니다. 매장과 팀에서 손으로 하던 일을 웹으로 옮길 수 있는 예입니다.
+              고객에게 납품한 사례가 아닙니다. 매장과 팀이 손으로 하던 일을 웹으로 옮길 수 있는 예입니다.
             </p>
             <ul className="mt-6 border-t border-white/15">
               {systemExamples.map((item) => (
@@ -173,7 +187,7 @@ export function HomeContent({ framed = false }: { framed?: boolean }) {
             </ul>
             <p className="mt-4 text-sm leading-6">
               <Link href="/services#excluded" className="text-[#8adfff] underline underline-offset-4">
-                홈페이지 금액에 넣지 않는 항목
+                홈페이지 금액에 포함되지 않는 항목
               </Link>
             </p>
           </div>
@@ -183,10 +197,13 @@ export function HomeContent({ framed = false }: { framed?: boolean }) {
       <section id="process" className="scroll-mt-24 border-t border-white/10 bg-paper">
         <Container className="py-12 lg:py-14">
           <h2 className="text-3xl font-semibold tracking-[-0.03em]">진행 순서</h2>
-          <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {homeProcess.map((step, index) => (
               <li key={step.title} className="border-t border-[#00C8F0]/45 pt-4">
-                <p className="text-sm text-[#8adfff]">0{index + 1}</p>
+                <p className="text-sm text-[#8adfff]">
+                  <span aria-hidden="true">{step.emoji} </span>
+                  {String(index + 1).padStart(2, "0")}
+                </p>
                 <h3 className="mt-3 text-lg font-semibold">{step.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-muted">{step.text}</p>
               </li>

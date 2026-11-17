@@ -7,7 +7,7 @@ import { contactPrompts, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "문의",
   description:
-    "세리온테크에 홈페이지, 웹 시스템, 업무 자동화, 유지보수를 문의합니다. 목적과 참고 사이트를 알려 주시면 범위를 정리해 드립니다.",
+    "기업 홈페이지, 웹 애플리케이션, 업무 자동화, 유지보수를 홈페이지에서 문의합니다. 접수한 내용은 대표 메일로 전달됩니다.",
   alternates: { canonical: "/contact" },
 };
 
@@ -26,12 +26,12 @@ export default function ContactPage() {
           </div>
         }
       >
-        {`안녕하세요. ${site.name}입니다. 홈페이지나 시스템의 목적과 필요한 기능을 확인한 뒤, 개발 방향과 견적을 안내합니다. 기획이 정리되지 않은 상태여도 구성과 작업 범위를 함께 잡을 수 있습니다.`}
+        {`안녕하세요. ${site.name}입니다. 홈페이지나 시스템의 목적과 필요한 기능을 확인한 뒤, 개발 방향과 견적을 안내합니다. 기획이 아직 정리되지 않았어도 구성과 작업 범위를 함께 잡을 수 있습니다.`}
       </PageHero>
       <div className="bg-paper">
         <Container className="grid gap-10 py-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-start lg:py-14">
           <div>
-            <h2 className="text-lg font-semibold">함께 알려 주시면 좋은 것</h2>
+            <h2 className="text-lg font-semibold">알려 주시면 좋은 내용</h2>
             <ol className="mt-4 border-t border-white/15">
               {contactPrompts.map((item, index) => (
                 <li key={item.text} className="grid grid-cols-[2.5rem_1fr] border-b border-line py-3 text-sm">

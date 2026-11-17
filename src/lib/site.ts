@@ -11,7 +11,7 @@ export const site = {
   businessItems: ["응용 소프트웨어 개발 및 공급업", "컴퓨터 프로그래밍 서비스업"],
   year: 2026,
   description:
-    "기업과 매장의 홈페이지, 웹 업무 시스템, 업무 자동화를 개발합니다. Next.js 기반 반응형 웹, 관리자 페이지, 유지보수를 제공합니다.",
+    "기업 홈페이지와 반응형 웹사이트를 제작하고, 관리자 페이지와 웹 애플리케이션, 업무 자동화를 개발합니다. 작업 범위와 비용은 시작 전에 정합니다.",
 } as const;
 
 export const images = {
@@ -56,7 +56,7 @@ export const homeServices = [
     index: "03",
     emoji: "⚡",
     title: "업무 자동화",
-    line: "반복 업무 효율화",
+    line: "반복되는 일의 자동화",
     text: "반복 입력, 알림, 자료 정리처럼 손으로 하던 일을 줄이는 흐름을 만듭니다.",
     href: "/services#systems",
   },
@@ -65,7 +65,7 @@ export const homeServices = [
     emoji: "🔧",
     title: "유지보수",
     line: "기존 서비스 개선",
-    text: "이미 있는 사이트의 오류, 화면, 속도를 고치고 운영을 이어 갑니다.",
+    text: "이미 있는 사이트의 오류와 화면, 속도를 손보고 운영을 이어 갑니다.",
     href: "/services#maintenance",
   },
 ] as const;
@@ -88,21 +88,29 @@ export const portfolio = [
 ] as const;
 
 export const homeProcess = [
-  { index: "01", emoji: "💬", title: "상담", text: "목적, 참고 사이트, 지금 쓰는 방식을 확인합니다." },
-  { index: "02", emoji: "📝", title: "기획", text: "페이지, 기능, 일정, 비용, 수정 횟수를 문서로 정리합니다." },
-  { index: "03", emoji: "✏️", title: "디자인", text: "화면 구성과 분위기를 맞춘 뒤 개발로 넘어갑니다." },
-  { index: "04", emoji: "💻", title: "개발", text: "정한 범위 안에서 만들고, 중간 결과를 보여 드립니다." },
-  { index: "05", emoji: "✅", title: "납품 및 유지보수", text: "검수와 배포를 마칩니다. 이후 운영은 범위를 정해 이어 갑니다." },
+  { emoji: "✉️", title: "프로젝트 문의", text: "만들고 싶은 것과 희망 일정을 받습니다." },
+  { emoji: "💬", title: "요구사항 검토 및 상담", text: "목적, 필요한 화면, 지금 쓰는 방식을 확인합니다." },
+  { emoji: "📝", title: "견적 및 계약", text: "작업 범위, 기간, 금액, 수정 횟수를 정하고 계약합니다." },
+  { emoji: "💻", title: "디자인 및 개발", text: "화면을 정한 뒤, 그 범위 안에서 개발합니다." },
+  { emoji: "✅", title: "테스트 및 납품", text: "만든 화면을 함께 확인한 뒤, 필요한 수정을 반영하고 배포합니다." },
+  { emoji: "🔧", title: "유지보수 및 운영 지원", text: "원하시면 계약한 유지보수 범위 안에서 운영을 이어 갑니다." },
 ] as const;
 
 export const packages = [
   {
     code: "STANDARD",
+    name: "기본형",
     price: "390,000원",
     days: "5일",
     pages: "1페이지",
     summary: "서비스 하나를 설명하는 랜딩형 홈페이지",
     featured: false,
+    responsive: "PC, 태블릿, 모바일에 맞춰 제작합니다",
+    inquiry: "한 페이지 안에 문의 폼을 넣습니다",
+    admin: "포함하지 않습니다. 필요하면 따로 견적합니다",
+    revisions: "수정 횟수는 계약 전에 정합니다. 그 횟수를 넘기면 1회 30,000원입니다",
+    features: "회사와 서비스 소개, 반응형 화면, 문의 폼을 넣습니다",
+    extras: "페이지 추가는 80,000원, 간단한 기능은 100,000원입니다. 로그인, 회원, 결제, 관리자, 외부 API는 별도 견적입니다",
     items: [
       { emoji: "🏢", text: "기업·서비스 기본 소개" },
       { emoji: "📱", text: "반응형 화면" },
@@ -111,11 +119,18 @@ export const packages = [
   },
   {
     code: "DELUXE",
+    name: "표준형",
     price: "790,000원",
     days: "10일",
     pages: "최대 5페이지",
     summary: "회사 소개와 서비스 안내가 나뉜 기업 홈페이지",
     featured: true,
+    responsive: "PC, 태블릿, 모바일에 맞춰 제작합니다",
+    inquiry: "문의 페이지를 포함합니다",
+    admin: "포함하지 않습니다. 필요하면 따로 견적합니다",
+    revisions: "수정 횟수는 계약 전에 정합니다. 그 횟수를 넘기면 1회 30,000원입니다",
+    features: "회사 소개, 서비스 안내, 문의 페이지, 반응형 화면을 넣습니다",
+    extras: "페이지 추가는 80,000원, 간단한 기능은 100,000원입니다. 로그인, 회원, 결제, 관리자, 외부 API는 별도 견적입니다",
     items: [
       { emoji: "🧩", text: "맞춤 페이지 구성" },
       { emoji: "🏢", text: "회사 소개와 서비스 안내" },
@@ -125,11 +140,18 @@ export const packages = [
   },
   {
     code: "PREMIUM",
+    name: "고급형",
     price: "1,490,000원",
     days: "15일",
     pages: "최대 8페이지",
     summary: "페이지와 콘텐츠가 더 많은 맞춤 홈페이지",
     featured: false,
+    responsive: "PC, 태블릿, 모바일에 맞춰 제작합니다",
+    inquiry: "문의 페이지를 포함합니다",
+    admin: "포함하지 않습니다. 필요하면 따로 견적합니다",
+    revisions: "수정 횟수는 계약 전에 정합니다. 그 횟수를 넘기면 1회 30,000원입니다",
+    features: "맞춤 디자인과 콘텐츠 페이지, 반응형 화면을 넣고 구성은 협의합니다",
+    extras: "페이지 추가는 80,000원, 간단한 기능은 100,000원입니다. 로그인, 회원, 결제, 관리자, 외부 API는 별도 견적입니다",
     items: [
       { emoji: "✨", text: "고급 맞춤 디자인" },
       { emoji: "📚", text: "다양한 콘텐츠 페이지" },
@@ -154,24 +176,57 @@ export const separateQuote = [
 ] as const;
 
 export const homepageIncludes = [
-  { emoji: "📱", text: "PC, 태블릿, 모바일 반응형" },
+  { emoji: "📱", text: "PC, 태블릿, 모바일 반응형 화면" },
   { emoji: "🔍", text: "페이지 제목과 설명 등 기본 검색 정보" },
   { emoji: "🌐", text: "도메인 연결 및 배포 지원" },
   { emoji: "✏️", text: "계약 전에 정한 횟수 안의 수정" },
 ] as const;
 
 export const maintenancePlans = [
-  { emoji: "🌱", name: "기본형", price: "월 30,000원" },
-  { emoji: "🌿", name: "일반형", price: "월 50,000원" },
-  { emoji: "🌳", name: "확장형", price: "월 100,000원" },
+  {
+    name: "기본형",
+    price: "월 30,000원",
+    meta: "요청 월 1회 · 점검 월 1회",
+    summary: "대표 페이지의 접속과 작은 수정을 봅니다.",
+    check: "월 1회, 대표 페이지가 열리고 화면이 보이는지 확인합니다.",
+    bugs: "이미 있는 기능이 동작하지 않으면, 월 요청 횟수 안에서 고칩니다.",
+    content: "문구와 이미지 교체는 월 요청 횟수 안에서 합니다.",
+    requests: "월 1회입니다. 1회는 오류 수정 1건이거나 문구·이미지 수정 1곳입니다.",
+    response: "영업일 기준 3일 이내에 접수를 회신합니다. 수정이 끝나는 날은 작업량에 따라 달라집니다.",
+  },
+  {
+    name: "일반형",
+    price: "월 50,000원",
+    meta: "요청 월 2회 · 점검 월 1회",
+    summary: "공개 페이지와 문의 폼을 점검하고, 작은 수정을 진행합니다.",
+    check: "월 1회, 대표 페이지와 하위 페이지, 문의 폼이 동작하는지 확인합니다.",
+    bugs: "이미 있는 기능이 동작하지 않으면, 월 요청 횟수 안에서 고칩니다.",
+    content: "문구와 이미지 교체는 월 요청 횟수 안에서 합니다.",
+    requests: "월 2회입니다. 1회는 오류 수정 1건이거나 문구·이미지 수정 1곳입니다.",
+    response: "영업일 기준 2일 이내에 접수를 회신합니다. 수정이 끝나는 날은 작업량에 따라 달라집니다.",
+  },
+  {
+    name: "확장형",
+    price: "월 100,000원",
+    meta: "요청 월 4회 · 점검 월 2회",
+    summary: "점검과 작은 수정을 더 자주 진행합니다.",
+    check: "월 2회, 공개 페이지와 문의 폼이 동작하는지 확인합니다.",
+    bugs: "이미 있는 기능이 동작하지 않으면, 월 요청 횟수 안에서 고칩니다.",
+    content: "문구와 이미지 교체는 월 요청 횟수 안에서 합니다.",
+    requests: "월 4회입니다. 1회는 오류 수정 1건이거나 문구·이미지 수정 1곳입니다.",
+    response: "영업일 기준 1일 이내에 접수를 회신합니다. 수정이 끝나는 날은 작업량에 따라 달라집니다.",
+  },
 ] as const;
+
+export const maintenanceExcluded =
+  "서버와 도메인, 메일, 유료 서비스 이용료는 포함하지 않습니다. 신규 기능, 디자인 전면 변경, 대규모 데이터베이스 변경, 외부 API 추가는 따로 견적합니다.";
 
 export const systems = [
   { emoji: "📥", name: "간단한 신청·접수", price: "요구사항 확인 후 견적" },
-  { emoji: "📅", name: "예약 관리", price: "약 690,000원부터 검토" },
+  { emoji: "📅", name: "예약 관리", price: "약 690,000원부터" },
   { emoji: "👥", name: "고객·회원 관리", price: "기능에 따라 별도 견적" },
   { emoji: "⚡", name: "업무 자동화", price: "요구사항 확인 후 견적" },
-  { emoji: "🧑‍💼", name: "관리자 시스템", price: "약 1,500,000원부터 검토" },
+  { emoji: "🧑‍💼", name: "관리자 시스템", price: "약 1,500,000원부터" },
   { emoji: "🧩", name: "복잡한 업무 시스템", price: "요구사항 분석 후 개별 견적" },
 ] as const;
 
@@ -181,7 +236,7 @@ export const systemExamples = [
   { emoji: "💬", text: "상담과 문의 접수" },
   { emoji: "📋", text: "직원과 업무 진행 관리" },
   { emoji: "📊", text: "엑셀로 하던 업무의 웹 전환" },
-  { emoji: "⚡", text: "반복 입력, 알림, 자료 정리처럼 손으로 하던 일의 자동화" },
+  { emoji: "⚡", text: "반복 입력, 알림, 자료 정리의 자동화" },
 ] as const;
 
 export const offers = [
@@ -203,19 +258,12 @@ export const offers = [
     index: "03",
     emoji: "🔧",
     title: "개선과 유지보수",
-    text: "오류, 화면, 속도, 작은 기능을 고칩니다. 납품 이후에는 월 단위로 운영 상태를 볼 수도 있습니다.",
+    text: "오류, 화면, 속도, 작은 기능을 고칩니다. 납품 뒤에는 월 단위 유지보수로 이어갈 수 있습니다.",
     href: "/services#maintenance",
   },
 ] as const;
 
-export const steps = [
-  { emoji: "💬", title: "상담", text: "목적, 참고 사이트, 지금 쓰는 방식을 확인합니다." },
-  { emoji: "📐", title: "범위", text: "페이지, 기능, 일정, 비용, 수정 횟수를 정리합니다." },
-  { emoji: "📝", title: "계약", text: "견적서와 용역계약서로 작업 범위를 확정합니다." },
-  { emoji: "🛠️", title: "개발", text: "중간 결과물을 보여 주며 협의된 범위로 만듭니다." },
-  { emoji: "🔍", title: "검수", text: "계약된 범위 안에서 확인하고, 필요한 보완을 반영합니다." },
-  { emoji: "🚀", title: "납품", text: "배포와 정산을 마칩니다. 원하시면 유지보수를 이어 갑니다." },
-] as const;
+export const steps = homeProcess;
 
 export const fits = [
   { emoji: "🏪", text: "회사나 매장을 설명할 사이트가 필요할 때" },
@@ -229,7 +277,7 @@ export const principles = [
   {
     emoji: "🎯",
     title: "필요한 구조만 둡니다",
-    text: "모든 프로젝트에 서버와 데이터베이스를 넣지 않습니다. 소개 사이트면 소개 사이트로 끝내고, 데이터를 다뤄야 할 때만 시스템을 붙입니다.",
+    text: "모든 프로젝트에 서버와 데이터베이스를 넣지 않습니다. 소개 사이트는 소개로 끝내고, 데이터를 다뤄야 할 때만 시스템을 추가합니다.",
   },
   {
     emoji: "📄",
@@ -243,25 +291,67 @@ export const principles = [
   },
   {
     emoji: "🏷️",
-    title: "샘플과 납품을 구분합니다",
-    text: "고객 납품 사례는 공개 동의를 받은 것만 올립니다. 자체 제작 예시는 샘플이라고 표시합니다.",
+    title: "예시와 납품을 구분합니다",
+    text: "고객 납품 사례는 공개 동의를 받은 것만 올립니다. 직접 만든 화면은 예시라고 표시합니다.",
   },
 ] as const;
 
 export const stack = [
   { emoji: "🖥️", label: "화면", value: "Next.js, React, TypeScript" },
-  { emoji: "⚙️", label: "서버", value: "Node.js, Next.js. 필요할 때 NestJS" },
-  { emoji: "🗄️", label: "데이터", value: "PostgreSQL, MySQL, Prisma. 필요할 때 Redis" },
-  { emoji: "☁️", label: "배포", value: "Vercel, Cloudflare. 규모에 따라 AWS" },
+  { emoji: "⚙️", label: "서버", value: "Node.js, Next.js. 필요할 때는 NestJS" },
+  { emoji: "🗄️", label: "데이터", value: "PostgreSQL, MySQL, Prisma. 필요할 때는 Redis" },
+  { emoji: "☁️", label: "배포", value: "Vercel, Cloudflare. 규모가 커지면 AWS" },
 ] as const;
 
 export const inquiryKinds = [
   { emoji: "💻", label: "기업 홈페이지 제작" },
-  { emoji: "🔄", label: "홈페이지 리뉴얼" },
-  { emoji: "📊", label: "맞춤 웹 시스템" },
-  { emoji: "⚡", label: "업무 자동화" },
-  { emoji: "🔧", label: "유지보수" },
-  { emoji: "✨", label: "기타" },
+  { emoji: "📄", label: "랜딩페이지 제작" },
+  { emoji: "🗂️", label: "관리자 시스템 개발" },
+  { emoji: "🧩", label: "웹 애플리케이션 개발" },
+  { emoji: "⚡", label: "업무 자동화 및 API 연동" },
+  { emoji: "🔧", label: "유지보수 및 기능 개선" },
+  { emoji: "✉️", label: "기타 문의" },
+] as const;
+
+export const strengths = [
+  {
+    title: "필요한 기능부터",
+    text: "넣을 기능은 고객의 업무에서 정합니다. 쓰지 않는 화면과 서버는 넣지 않습니다.",
+  },
+  {
+    title: "범위와 비용은 먼저",
+    text: "페이지, 기능, 일정, 금액, 수정 횟수를 개발 전에 문서로 정합니다.",
+  },
+  {
+    title: "반응형 웹",
+    text: "PC와 모바일에서 보는 반응형 웹사이트를 Next.js, React, TypeScript로 만듭니다.",
+  },
+  {
+    title: "이후 수정과 확장",
+    text: "나중에 고치고 덧붙일 수 있게 구성합니다. 새 기능은 범위를 다시 정한 뒤 진행합니다.",
+  },
+  {
+    title: "일하는 방식에 맞춘 화면",
+    text: "소개 페이지, 관리 화면, 반복 업무 정리를 실제 업무 흐름에 맞춰 제안합니다.",
+  },
+] as const;
+
+export const workDemos = [
+  {
+    title: "기업용 관리자 대시보드",
+    text: "통계, 사용자, 검색, 상세 정보를 한 화면에서 보는 관리 화면의 예시입니다.",
+    points: ["대시보드 통계", "사용자 관리", "데이터 테이블", "검색·필터", "상세 정보"],
+  },
+  {
+    title: "예약 및 고객 관리",
+    text: "예약을 받고, 고객 정보와 진행 상태를 관리하는 화면의 예시입니다.",
+    points: ["예약 등록", "예약 현황", "고객 정보", "상태 변경", "관리 화면"],
+  },
+  {
+    title: "업무 자동화",
+    text: "반복 작업을 정리하고, 실행 이력과 결과를 확인하는 화면의 예시입니다.",
+    points: ["작업 관리", "데이터 수집", "실행 이력", "처리 결과"],
+  },
 ] as const;
 
 export const contactPrompts = [

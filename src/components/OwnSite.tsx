@@ -16,7 +16,7 @@ export function OwnSite() {
         </div>
       </div>
       <figcaption className="mt-3 text-sm leading-6 text-muted">
-        세리온테크 공식 사이트입니다. 고객 납품 사례가 아닙니다.
+        세리온테크가 직접 만든 공식 사이트입니다. 고객에게 납품한 사례가 아닙니다.
       </figcaption>
     </figure>
   );

@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { OwnSite } from "@/components/OwnSite";
 import { PageHero } from "@/components/PageHero";
-import { principles, site, stack } from "@/lib/site";
+import { WorkSamples } from "@/components/WorkSamples";
+import { principles, site, stack, strengths } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "회사 소개",
   description:
-    "세리온테크는 기업과 매장의 홈페이지, 관리자 페이지, 맞춤 웹 시스템과 업무 자동화를 개발합니다. 착수 전에 작업 범위를 문서로 확정합니다.",
+    "세리온테크는 기업 홈페이지, 반응형 웹사이트, 관리자 페이지, 웹 애플리케이션, 업무 자동화를 개발합니다. 착수 전에 작업 범위와 비용을 정합니다.",
   alternates: { canonical: "/about" },
 };
 
@@ -35,8 +36,22 @@ export default function AboutPage() {
           </dl>
         }
       >
-        {`${site.name}는 기업과 매장에 홈페이지와 웹 소프트웨어를 개발합니다. 소개 페이지만 보기 좋게 만드는 일에서 끝내지 않고, 문의가 쌓이는 곳, 예약을 받는 곳, 반복 업무를 줄이는 곳까지 함께 봅니다.`}
+        {`${site.name}는 기업과 매장의 홈페이지와 웹 소프트웨어를 만듭니다. 소개 페이지에서 끝내지 않고, 문의와 예약, 반복 업무까지 함께 봅니다. 필요한 기능과 범위, 이후 수정은 개발 전에 정합니다.`}
       </PageHero>
+
+      <section className="border-b border-white/10 bg-paper">
+        <Container className="py-12 lg:py-14">
+          <h2 className="text-3xl font-semibold tracking-[-0.03em]">이렇게 일합니다</h2>
+          <ul className="mt-6 grid gap-6 sm:grid-cols-2">
+            {strengths.map((item) => (
+              <li key={item.title} className="border-t border-[#00C8F0]/45 pt-4">
+                <h3 className="text-lg font-semibold">{item.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-muted">{item.text}</p>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
 
       <section className="border-b border-white/10 bg-paper">
         <Container className="py-12 lg:py-14">
@@ -44,6 +59,13 @@ export default function AboutPage() {
           <h2 className="mt-2 text-3xl font-semibold tracking-[-0.03em]">세리온테크 공식 사이트</h2>
           <div className="mt-6">
             <OwnSite />
+          </div>
+          <h2 className="mt-12 text-3xl font-semibold tracking-[-0.03em]">작업 예시</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
+            고객에게 납품한 사례가 아닙니다. 만들 수 있는 화면의 예시이고, 눌러 볼 수 있는 데모는 준비가 끝나면 올립니다.
+          </p>
+          <div className="mt-6">
+            <WorkSamples />
           </div>
         </Container>
       </section>

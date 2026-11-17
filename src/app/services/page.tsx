@@ -5,6 +5,7 @@ import { PackageList } from "@/components/PackageList";
 import {
   addons,
   homepageIncludes,
+  maintenanceExcluded,
   maintenancePlans,
   packages,
   quoteNotice,
@@ -16,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "서비스",
   description:
-    "세리온테크의 기업 홈페이지 제작, 맞춤 웹 시스템, 유지보수 범위와 가격입니다. 로그인, 결제, 관리자 기능은 별도 견적입니다.",
+    "세리온테크의 기업 홈페이지 제작, 반응형 웹사이트, 관리자 페이지, 업무 자동화, 유지보수의 범위와 가격입니다. 로그인, 결제, 관리자 기능은 별도 견적입니다.",
   alternates: { canonical: "/services" },
 };
 
@@ -28,11 +29,11 @@ export default function ServicesPage() {
           <div>
             <p className="text-sm text-[#8adfff]">서비스 · 범위와 비용</p>
             <h1 className="mt-3 max-w-[14em] text-[2.1rem] font-semibold leading-[1.22] tracking-[-0.04em] sm:text-[2.7rem]">
-              홈페이지로 시작하고, 필요한 시스템은 따로 견적합니다
+              홈페이지부터 시작하고, 필요한 시스템은 따로 견적합니다
             </h1>
             <p className="mt-5 max-w-xl text-sm leading-7 text-[#c5d0df] sm:text-base">
-              초기 상품은 1페이지부터 8페이지의 반응형 기업 홈페이지입니다. 예약, 회원, 관리자, 결제처럼 데이터를
-              다루는 기능은 홈페이지 패키지에 포함하지 않습니다.
+              홈페이지 상품은 1페이지부터 최대 8페이지의 반응형 사이트입니다. 예약, 회원, 관리자, 결제처럼 데이터를
+              다루는 기능은 이 금액에 포함하지 않습니다.
             </p>
           </div>
           <ul className="border-t border-white/15 lg:border-t-0">
@@ -40,7 +41,7 @@ export default function ServicesPage() {
               <li key={item.code} className="border-b border-white/10 py-3">
                 <a href="#packages" className="flex items-baseline justify-between gap-4">
                   <span className={`text-sm ${item.featured ? "text-[#8adfff]" : "text-muted"}`}>
-                    {item.code}
+                    {item.name} · {item.code}
                     {item.featured ? " · 먼저 제안" : ""}
                   </span>
                   <span className="font-semibold tracking-[-0.03em]">{item.price}</span>
@@ -55,8 +56,8 @@ export default function ServicesPage() {
         <Container className="py-12 lg:py-14">
           <h2 className="text-3xl font-semibold tracking-[-0.03em]">기업 홈페이지</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
-            Next.js로 제작합니다. 작업 기간은 자료가 준비된 뒤의 개발 기간이며, 자료 전달이나 검수가 늦어지면
-            일정을 다시 잡습니다.
+            Next.js로 제작합니다. 작업 기간은 자료가 준비된 뒤부터 세며, 자료 전달이나 검수가 늦어지면 일정을
+            다시 잡습니다.
           </p>
           <div className="mt-8">
             <PackageList />
@@ -64,7 +65,7 @@ export default function ServicesPage() {
 
           <div className="mt-8 grid gap-4 lg:grid-cols-2">
             <div className="border border-white/10 bg-night p-6">
-              <h3 className="text-lg font-semibold">공통으로 보는 항목</h3>
+              <h3 className="text-lg font-semibold">모든 상품에 포함</h3>
               <ul className="mt-4 space-y-2 text-sm leading-7">
                 {homepageIncludes.map((item) => (
                   <li key={item.text}>{item.text}</li>
@@ -81,7 +82,7 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <h3 className="mt-12 text-lg font-semibold">범위 밖 추가</h3>
+          <h3 className="mt-12 text-lg font-semibold">범위를 넘는 추가</h3>
           <dl className="mt-4 border-t border-white/15">
             {addons.map((item) => (
               <div key={item.name} className="grid gap-1 border-b border-line py-4 sm:grid-cols-[1fr_auto_auto] sm:gap-8">
@@ -134,15 +135,37 @@ export default function ServicesPage() {
         <Container className="py-12 lg:py-14">
           <h2 className="text-3xl font-semibold tracking-[-0.03em]">유지보수</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
-            납품 이후 오류 확인, 작은 수정, 운영 점검을 월 단위로 볼 수 있습니다. 세 금액은 초기 안내이고, 어디까지
-            포함할지는 계약서에 적습니다.
+            납품 이후의 점검과 작은 수정을 월 단위로 진행합니다. 아래가 각 금액에 포함되는 범위이고, 같은 내용을
+            계약서에 적습니다.
           </p>
-          <p className="mt-6 border-y border-white/15 py-4 text-base font-semibold">
-            {maintenancePlans.map((item) => `${item.name} ${item.price}`).join(" · ")}
-          </p>
+          <div className="mt-8 grid items-stretch gap-4 lg:grid-cols-3">
+            {maintenancePlans.map((item) => (
+              <article key={item.name} className="soft-card flex flex-col border border-white/10 bg-night p-6 sm:p-7">
+                <p className="text-sm text-muted">유지보수 · {item.name}</p>
+                <p className="mt-5 text-[2rem] font-semibold tracking-[-0.03em]">{item.price}</p>
+                <p className="mt-2 text-sm text-muted">{item.meta}</p>
+                <p className="mt-5 text-sm leading-7 text-[#c5d0df]">{item.summary}</p>
+                <dl className="mt-5 space-y-3 border-t border-white/15 pt-5 text-sm leading-6">
+                  {[
+                    ["정기 점검", item.check],
+                    ["오류 수정", item.bugs],
+                    ["문구·이미지", item.content],
+                    ["요청", item.requests],
+                    ["대응", item.response],
+                    ["별도 견적", maintenanceExcluded],
+                  ].map(([label, value]) => (
+                    <div key={label}>
+                      <dt className="text-[#8adfff]">{label}</dt>
+                      <dd className="mt-1">{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </article>
+            ))}
+          </div>
           <p className="mt-6 max-w-3xl text-sm leading-7 text-muted">
-            페이지 추가, 새 기능, 데이터베이스 구조 변경, 큰 수정은 유지보수에 넣지 않고 별도 견적합니다. 이미 운영
-            중인 사이트의 단건 수정과 기능 추가도 범위를 보고 진행합니다.
+            횟수를 넘기거나 새 페이지가 필요하면 따로 견적합니다. 무제한 수정과 무제한 개발은 하지 않습니다. 이미 운영
+            중인 사이트의 단건 수정도 범위를 보고 진행합니다.
           </p>
         </Container>
       </section>
@@ -152,7 +175,7 @@ export default function ServicesPage() {
           <div className="max-w-xl">
             <h2 className="text-3xl font-semibold tracking-[-0.03em]">모바일 앱은 먼저 웹으로 검토합니다</h2>
             <p className="mt-4 text-sm leading-7 text-muted">
-              앱이 꼭 필요한지는 요구사항을 본 뒤 판단합니다. 반응형 웹이나 모바일 웹으로 충분한 경우에는 그 방식으로
+              앱이 필요한지는 요구사항을 본 뒤 판단합니다. 반응형 웹이나 모바일 웹으로 충분한 경우에는 그 방식을
               제안합니다.
             </p>
           </div>
