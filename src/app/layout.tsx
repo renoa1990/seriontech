@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: "OA6w96NB6YD0o-6A1lR-IxMSCSBb6FEGhQbHWw40VfQ",
+  },
 };
 
 export const viewport: Viewport = {
