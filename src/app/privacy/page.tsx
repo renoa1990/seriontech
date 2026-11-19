@@ -62,10 +62,10 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
-      <header className="border-b border-white/10 bg-paper text-white">
-        <Container className="py-12 lg:py-16">
-          <p className="text-sm text-[#8adfff]">개인정보</p>
-          <h1 className="mt-3 max-w-[12em] text-[2.1rem] font-semibold leading-[1.22] tracking-[-0.04em] sm:text-[2.7rem]">
+      <header className="border-b border-white/10 text-white">
+        <Container className="py-14 lg:py-20">
+          <p className="kicker">개인정보</p>
+          <h1 className="mt-5 max-w-[12em] text-[2.15rem] font-semibold leading-[1.18] tracking-[-0.045em] sm:text-[2.85rem]">
             개인정보 처리 안내
           </h1>
           <p className="mt-5 max-w-2xl text-sm leading-7 text-[#c5d0df] sm:text-base">
@@ -76,15 +76,15 @@ export default function PrivacyPage() {
       <section className="bg-paper">
         <Container className="py-14 sm:py-16">
           <div className="max-w-3xl">
-          <dl className="grid gap-4">
+          <dl className="grid gap-3">
             {sections.map((section) => (
-              <div key={section.title} className="border-t border-line py-5">
+              <div key={section.title} className="panel px-5 py-5">
                 <dt className="text-base font-semibold">{section.title}</dt>
                 <dd className="mt-2 text-sm leading-7 text-muted">{section.body}</dd>
               </div>
             ))}
           </dl>
-          <div className="mt-8 border border-white/15 bg-night px-6 py-5 text-sm leading-7">
+          <div className="panel-solid mt-8 px-6 py-5 text-sm leading-7">
             <p>개인정보 보호책임자: {site.representative}</p>
             <p className="mt-1">
               개인정보 관련 문의:{" "}
@@ -94,7 +94,7 @@ export default function PrivacyPage() {
             </p>
             <p className="mt-1 text-muted">{site.address}</p>
           </div>
-          <Link href="/contact" className="mt-8 inline-flex bg-white px-5 py-3 text-sm font-medium text-[#080E1B]">
+          <Link href="/contact" className="btn btn-light mt-8">
             문의하기
           </Link>
           </div>

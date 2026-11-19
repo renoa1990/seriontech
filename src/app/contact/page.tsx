@@ -21,11 +21,13 @@ export default function ContactPage() {
         eyebrow="문의"
         title="상담은 목적과 참고 사이트부터 시작합니다"
         aside={
-          <div className="border-t border-white/15 pt-6 text-sm lg:border-t-0 lg:pt-0 lg:text-right">
-            <a className="underline underline-offset-4" href={`mailto:${site.email}`}>
+          <div className="panel px-5 py-5 text-sm">
+            <p className="text-xs text-muted">메일</p>
+            <a className="mt-1 inline-flex break-all underline underline-offset-4" href={`mailto:${site.email}`}>
               {site.email}
             </a>
-            <p className="mt-3 leading-6 text-muted">{site.address}</p>
+            <p className="mt-4 text-xs text-muted">주소</p>
+            <p className="mt-1 leading-6">{site.address}</p>
           </div>
         }
       >
@@ -35,10 +37,10 @@ export default function ContactPage() {
         <Container className="grid gap-10 py-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-start lg:py-14">
           <div>
             <h2 className="text-lg font-semibold">알려 주시면 좋은 내용</h2>
-            <ol className="mt-4 border-t border-white/15">
+            <ol className="panel mt-4 overflow-hidden">
               {contactPrompts.map((item, index) => (
-                <li key={item.text} className="grid grid-cols-[2.5rem_1fr] border-b border-line py-3 text-sm">
-                  <span className="text-muted">0{index + 1}</span>
+                <li key={item.text} className="grid grid-cols-[2.5rem_1fr] border-b border-white/10 px-4 py-3 text-sm last:border-b-0">
+                  <span className="text-[#9eb6ff]">0{index + 1}</span>
                   <span>{item.text}</span>
                 </li>
               ))}

@@ -1,7 +1,7 @@
 export function OwnSite() {
   return (
     <figure>
-      <div className="border border-white/15 bg-black">
+      <div className="panel overflow-hidden bg-black shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
         <div className="flex items-center justify-between border-b border-white/15 px-4 py-2 text-xs text-muted">
           <span>seriontech.co.kr</span>
           <span>자체 제작</span>
@@ -11,7 +11,8 @@ export function OwnSite() {
             title="세리온테크 공식 사이트"
             src="/frame"
             tabIndex={-1}
-            className="pointer-events-none absolute top-0 left-0"
+            scrolling="no"
+            className="pointer-events-none absolute top-0 left-0 overflow-hidden"
           />
         </div>
       </div>

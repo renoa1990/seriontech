@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { packages } from "@/lib/site";
 
 export function PackageList() {
@@ -8,21 +9,20 @@ export function PackageList() {
         return (
           <article
             key={item.code}
-            className={`soft-card flex flex-col border p-6 sm:p-7 ${
-              featured ? "is-featured border-[#00C8F0]/50 bg-[#126BFF]/15" : "border-white/10 bg-night"
-            }`}
+            className={`soft-card flex flex-col p-6 sm:p-7 ${featured ? "panel-featured" : "panel"}`}
           >
-            <p className={`text-sm ${featured ? "text-[#8adfff]" : "text-muted"}`}>
-              {item.code} · {item.name}
-              {featured ? " · 먼저 제안" : ""}
-            </p>
-            <p className="mt-5 text-[2rem] font-semibold tracking-[-0.03em]">{item.price}</p>
+            <div className="flex items-center justify-between gap-3">
+              <p className={`text-xs tracking-[0.12em] ${featured ? "text-[#d5dcff]" : "text-muted"}`}>{item.code}</p>
+              {featured ? <span className="kicker">먼저 제안</span> : null}
+            </div>
+            <h3 className="mt-4 text-lg font-semibold">{item.name}</h3>
+            <p className="mt-3 text-[2rem] font-semibold tracking-[-0.04em]">{item.price}</p>
             <p className="mt-2 text-sm text-muted">
               <span className="sr-only">작업 기간과 페이지. </span>
               {item.days} · {item.pages}
             </p>
             <p className="mt-5 text-sm leading-7 text-[#c5d0df]">{item.summary}</p>
-            <dl className="mt-5 space-y-3 border-t border-white/15 pt-5 text-sm leading-6">
+            <dl className="mt-5 border-t border-white/10">
               {[
                 ["페이지", `${item.pages}로 구성합니다`],
                 ["납품 기간", `자료가 준비된 뒤 ${item.days}입니다`],
@@ -33,12 +33,15 @@ export function PackageList() {
                 ["수정", item.revisions],
                 ["추가 비용", item.extras],
               ].map(([label, value]) => (
-                <div key={label}>
-                  <dt className="text-[#8adfff]">{label}</dt>
-                  <dd className="mt-1">{value}</dd>
+                <div key={label} className="spec">
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
                 </div>
               ))}
             </dl>
+            <Link href="/contact" className={`btn mt-6 ${featured ? "btn-light" : "btn-line"}`}>
+              이 범위로 문의
+            </Link>
           </article>
         );
       })}

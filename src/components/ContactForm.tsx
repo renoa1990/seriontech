@@ -5,8 +5,7 @@ import { FormEvent, useRef, useState } from "react";
 import { type InquiryErrors, type InquiryInput, validateInquiry } from "@/lib/inquiry";
 import { inquiryKinds, site } from "@/lib/site";
 
-const fieldClass =
-  "mt-2 w-full border border-white/25 bg-paper px-4 py-3 text-base text-white placeholder:text-muted/70 focus:border-[#00C8F0]";
+const fieldClass = "field";
 
 const empty: InquiryInput = {
   kind: "",
@@ -71,7 +70,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="border border-white/15 bg-night p-6 sm:p-8" noValidate>
+    <form onSubmit={onSubmit} className="panel-solid p-6 sm:p-8" noValidate>
       <label className="block text-sm font-medium">
         문의 유형
         <select
@@ -91,7 +90,7 @@ export function ContactForm() {
             </option>
           ))}
         </select>
-        {errors.kind ? <span className="mt-1 block text-sm text-[#8adfff]">{errors.kind}</span> : null}
+        {errors.kind ? <span className="mt-1 block text-sm text-[#ffb4ae]">{errors.kind}</span> : null}
       </label>
       <div className="mt-5 grid gap-5 sm:grid-cols-2">
         <label className="block text-sm font-medium">
@@ -105,7 +104,7 @@ export function ContactForm() {
             aria-invalid={Boolean(errors.company)}
             className={fieldClass}
           />
-          {errors.company ? <span className="mt-1 block text-sm text-[#8adfff]">{errors.company}</span> : null}
+          {errors.company ? <span className="mt-1 block text-sm text-[#ffb4ae]">{errors.company}</span> : null}
         </label>
         <label className="block text-sm font-medium">
           담당자명
@@ -118,7 +117,7 @@ export function ContactForm() {
             aria-invalid={Boolean(errors.name)}
             className={fieldClass}
           />
-          {errors.name ? <span className="mt-1 block text-sm text-[#8adfff]">{errors.name}</span> : null}
+          {errors.name ? <span className="mt-1 block text-sm text-[#ffb4ae]">{errors.name}</span> : null}
         </label>
         <label className="block text-sm font-medium">
           연락처
@@ -134,7 +133,7 @@ export function ContactForm() {
             aria-invalid={Boolean(errors.phone)}
             className={fieldClass}
           />
-          {errors.phone ? <span className="mt-1 block text-sm text-[#8adfff]">{errors.phone}</span> : null}
+          {errors.phone ? <span className="mt-1 block text-sm text-[#ffb4ae]">{errors.phone}</span> : null}
         </label>
         <label className="block text-sm font-medium">
           이메일
@@ -148,7 +147,7 @@ export function ContactForm() {
             aria-invalid={Boolean(errors.email)}
             className={fieldClass}
           />
-          {errors.email ? <span className="mt-1 block text-sm text-[#8adfff]">{errors.email}</span> : null}
+          {errors.email ? <span className="mt-1 block text-sm text-[#ffb4ae]">{errors.email}</span> : null}
         </label>
       </div>
       <label className="mt-5 block text-sm font-medium">
@@ -161,7 +160,7 @@ export function ContactForm() {
           aria-invalid={Boolean(errors.title)}
           className={fieldClass}
         />
-        {errors.title ? <span className="mt-1 block text-sm text-[#8adfff]">{errors.title}</span> : null}
+        {errors.title ? <span className="mt-1 block text-sm text-[#ffb4ae]">{errors.title}</span> : null}
       </label>
       <div className="mt-5 grid gap-5 sm:grid-cols-2">
         <label className="block text-sm font-medium">
@@ -175,7 +174,7 @@ export function ContactForm() {
             aria-invalid={Boolean(errors.budget)}
             className={fieldClass}
           />
-          {errors.budget ? <span className="mt-1 block text-sm text-[#8adfff]">{errors.budget}</span> : null}
+          {errors.budget ? <span className="mt-1 block text-sm text-[#ffb4ae]">{errors.budget}</span> : null}
         </label>
         <label className="block text-sm font-medium">
           희망 완료 일정
@@ -188,7 +187,7 @@ export function ContactForm() {
             aria-invalid={Boolean(errors.schedule)}
             className={fieldClass}
           />
-          {errors.schedule ? <span className="mt-1 block text-sm text-[#8adfff]">{errors.schedule}</span> : null}
+          {errors.schedule ? <span className="mt-1 block text-sm text-[#ffb4ae]">{errors.schedule}</span> : null}
         </label>
       </div>
       <label className="mt-5 block text-sm font-medium">
@@ -203,7 +202,7 @@ export function ContactForm() {
           aria-invalid={Boolean(errors.message)}
           className={fieldClass}
         />
-        {errors.message ? <span className="mt-1 block text-sm text-[#8adfff]">{errors.message}</span> : null}
+        {errors.message ? <span className="mt-1 block text-sm text-[#ffb4ae]">{errors.message}</span> : null}
       </label>
       <input
         name="website"
@@ -231,11 +230,11 @@ export function ContactForm() {
           </Link>
         </span>
       </label>
-      {errors.consent ? <p className="mt-1 text-sm text-[#8adfff]">{errors.consent}</p> : null}
+      {errors.consent ? <p className="mt-1 text-sm text-[#ffb4ae]">{errors.consent}</p> : null}
       <button
         type="submit"
         disabled={status === "sending" || status === "success"}
-        className="mt-6 inline-flex bg-white px-5 py-3 text-sm font-medium text-[#080E1B] disabled:cursor-not-allowed disabled:opacity-60"
+        className="btn btn-light mt-6 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "sending" ? "보내는 중" : status === "success" ? "접수됨" : "문의 보내기"}
       </button>

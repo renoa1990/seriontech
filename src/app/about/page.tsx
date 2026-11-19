@@ -23,7 +23,7 @@ export default function AboutPage() {
         eyebrow="회사 소개"
         title="범위를 분명히 하고 그 범위만 만듭니다"
         aside={
-          <dl className="grid gap-4 border-t border-white/15 pt-6 text-sm lg:border-t-0 lg:pt-0">
+          <dl className="panel grid gap-4 px-5 py-5 text-sm">
             <div>
               <dt className="text-muted">대표</dt>
               <dd className="mt-1">{site.representative}</dd>
@@ -44,10 +44,11 @@ export default function AboutPage() {
 
       <section className="border-b border-white/10 bg-paper">
         <Container className="py-12 lg:py-14">
-          <h2 className="text-3xl font-semibold tracking-[-0.03em]">이렇게 일합니다</h2>
-          <ul className="mt-6 grid gap-6 sm:grid-cols-2">
+          <p className="kicker">일하는 방식</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">이렇게 일합니다</h2>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
             {strengths.map((item) => (
-              <li key={item.title} className="border-t border-[#00C8F0]/45 pt-4">
+              <li key={item.title} className="panel p-6">
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 <p className="mt-2 text-sm leading-7 text-muted">{item.text}</p>
               </li>
@@ -58,8 +59,8 @@ export default function AboutPage() {
 
       <section className="border-b border-white/10 bg-paper">
         <Container className="py-12 lg:py-14">
-          <p className="text-sm text-[#8adfff]">자체 제작</p>
-          <h2 className="mt-2 text-3xl font-semibold tracking-[-0.03em]">세리온테크 공식 사이트</h2>
+          <p className="kicker">자체 제작</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">세리온테크 공식 사이트</h2>
           <div className="mt-6">
             <OwnSite />
           </div>
@@ -75,11 +76,12 @@ export default function AboutPage() {
 
       <section className="bg-paper">
         <Container className="py-12 lg:py-14">
-          <h2 className="border-b border-white/15 pb-4 text-3xl font-semibold tracking-[-0.03em]">일하는 기준</h2>
-          <ol className="mt-2 grid sm:grid-cols-2 sm:gap-x-10">
+          <p className="kicker">기준</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">일하는 기준</h2>
+          <ol className="mt-8 grid gap-4 sm:grid-cols-2">
             {principles.map((item, index) => (
-              <li key={item.title} className="border-b border-line py-6">
-                <p className="text-sm text-[#8adfff]">{String(index + 1).padStart(2, "0")}</p>
+              <li key={item.title} className="panel p-6">
+                <p className="text-sm text-[#9eb6ff]">{String(index + 1).padStart(2, "0")}</p>
                 <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em]">{item.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-muted">{item.text}</p>
               </li>
@@ -91,15 +93,16 @@ export default function AboutPage() {
       <section className="bg-night">
         <Container className="grid gap-8 py-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:py-14">
           <div>
-            <h2 className="text-3xl font-semibold tracking-[-0.03em]">쓰는 기술</h2>
+            <p className="kicker">기술</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em]">쓰는 기술</h2>
             <p className="mt-4 max-w-md text-sm leading-7 text-muted">
               아래는 사용할 수 있는 기술입니다. 프로젝트마다 필요한 것만 고르고, 규모에 맞지 않는 서버는 넣지
               않습니다.
             </p>
           </div>
-          <dl className="border-t border-white/15 bg-paper">
+          <dl className="panel overflow-hidden">
             {stack.map((item) => (
-              <div key={item.label} className="grid gap-1 border-b border-line px-5 py-4 sm:grid-cols-[8rem_1fr] sm:items-baseline sm:gap-6">
+              <div key={item.label} className="grid gap-1 border-b border-white/10 px-5 py-4 last:border-b-0 sm:grid-cols-[8rem_1fr] sm:items-baseline sm:gap-6">
                 <dt className="text-sm font-semibold">{item.label}</dt>
                 <dd className="text-sm leading-7 text-muted">{item.value}</dd>
               </div>
@@ -111,13 +114,13 @@ export default function AboutPage() {
       <section className="bg-paper">
         <Container className="flex flex-col gap-6 py-12 sm:flex-row sm:items-end sm:justify-between lg:py-14">
           <div>
-            <p className="text-sm text-[#8adfff]">대표 {site.representative}</p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-[-0.03em]">범위를 정한 뒤 개발을 시작합니다</h2>
+            <p className="kicker">대표 {site.representative}</p>
+            <h2 className="mt-4 text-2xl font-semibold tracking-[-0.03em]">범위를 정한 뒤 개발을 시작합니다</h2>
             <a className="mt-3 inline-flex underline underline-offset-4" href={`mailto:${site.email}`}>
               {site.email}
             </a>
           </div>
-          <Link href="/contact" className="inline-flex items-center justify-center bg-white px-5 py-3 text-sm font-medium text-[#080E1B]">
+          <Link href="/contact" className="btn btn-light">
             상담 문의
           </Link>
         </Container>

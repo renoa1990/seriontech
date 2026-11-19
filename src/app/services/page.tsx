@@ -28,11 +28,12 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <header className="border-b border-white/10 bg-paper text-white">
-        <Container className="grid gap-10 py-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(16rem,0.7fr)] lg:items-end lg:py-16">
+      <header className="relative overflow-hidden border-b border-white/10 text-white">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(700px_280px_at_80%_0%,rgba(99,91,255,0.22),transparent_60%)]" aria-hidden />
+        <Container className="relative grid gap-10 py-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(16rem,0.7fr)] lg:items-end lg:py-20">
           <div>
-            <p className="text-sm text-[#8adfff]">서비스 · 범위와 비용</p>
-            <h1 className="mt-3 max-w-[14em] text-[2.1rem] font-semibold leading-[1.22] tracking-[-0.04em] sm:text-[2.7rem]">
+            <p className="kicker">서비스 · 범위와 비용</p>
+            <h1 className="mt-5 max-w-[14em] text-[2.15rem] font-semibold leading-[1.18] tracking-[-0.045em] sm:text-[2.85rem]">
               홈페이지부터 시작하고, 필요한 시스템은 따로 견적합니다
             </h1>
             <p className="mt-5 max-w-xl text-sm leading-7 text-[#c5d0df] sm:text-base">
@@ -40,11 +41,11 @@ export default function ServicesPage() {
               다루는 기능은 이 금액에 포함하지 않습니다.
             </p>
           </div>
-          <ul className="border-t border-white/15 lg:border-t-0">
+          <ul className="panel overflow-hidden">
             {packages.map((item) => (
-              <li key={item.code} className="border-b border-white/10 py-3">
-                <a href="#packages" className="flex items-baseline justify-between gap-4">
-                  <span className={`text-sm ${item.featured ? "text-[#8adfff]" : "text-muted"}`}>
+              <li key={item.code} className="border-b border-white/10 last:border-b-0">
+                <a href="#packages" className="flex items-baseline justify-between gap-4 px-5 py-4">
+                  <span className={`text-sm ${item.featured ? "text-[#c9d4ff]" : "text-muted"}`}>
                     {item.name} · {item.code}
                     {item.featured ? " · 먼저 제안" : ""}
                   </span>
@@ -58,7 +59,8 @@ export default function ServicesPage() {
 
       <section id="packages" className="scroll-mt-24 bg-paper">
         <Container className="py-12 lg:py-14">
-          <h2 className="text-3xl font-semibold tracking-[-0.03em]">기업 홈페이지</h2>
+          <p className="kicker">홈페이지</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">기업 홈페이지</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
             Next.js로 제작합니다. 작업 기간은 자료가 준비된 뒤부터 세며, 자료 전달이나 검수가 늦어지면 일정을
             다시 잡습니다.
@@ -68,7 +70,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="mt-8 grid gap-4 lg:grid-cols-2">
-            <div className="border border-white/10 bg-night p-6">
+            <div className="panel p-6">
               <h3 className="text-lg font-semibold">모든 상품에 포함</h3>
               <ul className="mt-4 space-y-2 text-sm leading-7">
                 {homepageIncludes.map((item) => (
@@ -76,7 +78,7 @@ export default function ServicesPage() {
                 ))}
               </ul>
             </div>
-            <div id="excluded" className="scroll-mt-24 border border-[#00C8F0]/40 bg-[#126BFF]/10 p-6">
+            <div id="excluded" className="panel-featured scroll-mt-24 p-6">
               <h3 className="text-lg font-semibold">별도 견적</h3>
               <ul className="mt-4 space-y-2 text-sm leading-7 text-[#c5d0df]">
                 {separateQuote.map((item) => (
@@ -87,9 +89,9 @@ export default function ServicesPage() {
           </div>
 
           <h3 className="mt-12 text-lg font-semibold">범위를 넘는 추가</h3>
-          <dl className="mt-4 border-t border-white/15">
+          <dl className="panel mt-4 overflow-hidden">
             {addons.map((item) => (
-              <div key={item.name} className="grid gap-1 border-b border-line py-4 sm:grid-cols-[1fr_auto_auto] sm:gap-8">
+              <div key={item.name} className="grid gap-1 border-b border-white/10 px-5 py-4 last:border-b-0 sm:grid-cols-[1fr_auto_auto] sm:gap-8">
                 <dt>{item.name}</dt>
                 <dd className="text-sm text-muted sm:text-right">{item.unit}</dd>
                 <dd className="font-semibold sm:text-right">{item.price}</dd>
@@ -108,16 +110,17 @@ export default function ServicesPage() {
 
       <section id="systems" className="scroll-mt-24 bg-night">
         <Container className="py-12 lg:py-14">
-          <h2 className="text-3xl font-semibold tracking-[-0.03em]">맞춤 웹 시스템</h2>
+          <p className="kicker">시스템</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">맞춤 웹 시스템</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
             홈페이지와 구분해서 진행합니다. 아래 금액은 초기 안내이며, 화면 수, 기능, 데이터 구조, 외부 연동에 따라
             계약 금액이 달라집니다.
           </p>
-          <dl className="mt-8 border-t border-white/15 bg-paper">
+          <dl className="panel mt-8 overflow-hidden">
             {systems.map((item) => (
               <div
                 key={item.name}
-                className="grid gap-1 border-b border-line px-5 py-4 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8"
+                className="grid gap-1 border-b border-white/10 px-5 py-4 last:border-b-0 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8"
               >
                 <dt className="font-medium">{item.name}</dt>
                 <dd className="text-sm text-muted sm:text-right">{item.price}</dd>
@@ -125,9 +128,9 @@ export default function ServicesPage() {
             ))}
           </dl>
           <h3 className="mt-10 text-lg font-semibold">만들 수 있는 예</h3>
-          <ul className="mt-4 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {systemExamples.map((item) => (
-              <li key={item.text} className="bg-paper px-5 py-4 text-sm leading-6">
+              <li key={item.text} className="panel px-5 py-4 text-sm leading-6">
                 {item.text}
               </li>
             ))}
@@ -137,23 +140,24 @@ export default function ServicesPage() {
 
       <section id="maintenance" className="scroll-mt-24 bg-paper">
         <Container className="py-12 lg:py-14">
-          <h2 className="text-3xl font-semibold tracking-[-0.03em]">홈페이지 유지보수</h2>
+          <p className="kicker">운영</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">홈페이지 유지보수</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
             홈페이지는 제작 이후에도 지속적인 관리가 필요합니다. 세리온테크는 정기 점검과 콘텐츠 수정, 오류 확인,
             기술 지원으로 운영을 돕습니다.
           </p>
           <div className="mt-8 grid items-stretch gap-4 lg:grid-cols-3">
             {maintenancePlans.map((item) => (
-              <article key={item.name} className="soft-card flex flex-col border border-white/10 bg-night p-6 sm:p-7">
+              <article key={item.name} className={`soft-card flex flex-col p-6 sm:p-7 ${item.name === "Standard" ? "panel-featured" : "panel"}`}>
                 <p className="text-sm text-muted">유지보수 · {item.name}</p>
                 <p className="mt-5 text-[2rem] font-semibold tracking-[-0.03em]">{item.price}</p>
                 <p className="mt-2 text-sm text-muted">{item.meta}</p>
                 <p className="mt-5 text-sm leading-7 text-[#c5d0df]">{item.summary}</p>
-                <dl className="mt-5 space-y-3 border-t border-white/15 pt-5 text-sm leading-6">
+                <dl className="mt-5 border-t border-white/10">
                   {item.points.map(([label, value]) => (
-                    <div key={label}>
-                      <dt className="text-[#8adfff]">{label}</dt>
-                      <dd className="mt-1">{value}</dd>
+                    <div key={label} className="spec">
+                      <dt>{label}</dt>
+                      <dd>{value}</dd>
                     </div>
                   ))}
                 </dl>
@@ -182,7 +186,7 @@ export default function ServicesPage() {
           </div>
           <Link
             href="/contact"
-            className="inline-flex shrink-0 items-center justify-center bg-white px-5 py-3 text-sm font-medium text-[#080E1B]"
+            className="btn btn-light shrink-0"
           >
             범위 문의
           </Link>

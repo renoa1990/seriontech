@@ -11,7 +11,7 @@ export function Logo() {
         height={194}
         priority
         unoptimized
-        className="h-11 w-auto"
+        className="h-7 w-auto max-w-[8.6rem] object-contain object-left sm:h-10 sm:max-w-none"
       />
     </Link>
   );
