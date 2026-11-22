@@ -44,29 +44,47 @@ export default function AboutPage() {
       </PageHero>
 
       <section className="border-b border-white/10 bg-paper">
-        <Container className="py-12 lg:py-14">
-          <p className="kicker">일하는 방식</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">이렇게 일합니다</h2>
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {strengths.map((item) => (
-              <li key={item.title} className="panel p-6">
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-muted">{item.text}</p>
+        <Container className="grid gap-8 py-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:py-14">
+          <div>
+            <p className="kicker">일하는 방식</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">이렇게 일합니다</h2>
+            <p className="mt-4 max-w-md text-sm leading-7 text-muted">
+              기능을 정하고 범위와 비용을 적은 뒤, PC와 모바일 화면을 만듭니다. 이후 수정은 범위를 다시 정하고
+              진행합니다.
+            </p>
+          </div>
+          <ol className="panel overflow-hidden">
+            {strengths.map((item, index) => (
+              <li
+                key={item.title}
+                className="grid grid-cols-[auto_minmax(0,1fr)] gap-4 border-b border-white/10 px-5 py-5 last:border-b-0 sm:gap-5 sm:px-6"
+              >
+                <span className="flex size-9 items-center justify-center rounded-full bg-[#635bff]/20 text-sm text-[#d5dcff]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="text-lg font-semibold tracking-[-0.03em]">{item.title}</h3>
+                  <p className="mt-1 text-sm leading-7 text-muted">{item.text}</p>
+                </div>
               </li>
             ))}
-          </ul>
+          </ol>
         </Container>
       </section>
 
       <section className="border-b border-white/10 bg-paper">
         <Container className="py-12 lg:py-14">
-          <p className="kicker">자체 제작</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">세리온테크 공식 사이트</h2>
-          <div className="mt-6">
-            <OwnSite />
-          </div>
-          <div className="mt-10">
-            <JudoSectorCard />
+          <p className="kicker">제작 사례</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">포트폴리오</h2>
+          <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:grid-rows-[auto_auto_auto] lg:gap-x-8 lg:gap-y-5">
+            <div className="grid grid-rows-[auto_auto_auto] gap-y-4 lg:row-span-3 lg:grid-rows-subgrid">
+              <h3 className="text-2xl font-semibold tracking-[-0.03em]">세리온테크 공식 사이트</h3>
+              <OwnSite />
+            </div>
+            <div className="grid grid-rows-[auto_auto_auto] gap-y-4 lg:row-span-3 lg:grid-rows-subgrid">
+              <h3 className="text-2xl font-semibold tracking-[-0.03em]">주도섹터 주식 시황</h3>
+              <JudoSectorCard />
+            </div>
           </div>
           <h2 className="mt-12 text-3xl font-semibold tracking-[-0.03em]">작업 예시</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">

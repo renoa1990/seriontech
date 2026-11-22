@@ -49,12 +49,19 @@ export function DevicePair({
   return (
     <div className={compact ? "px-3 py-8 sm:px-5 sm:py-10" : "rounded-[1.75rem] bg-[#eef3f8] px-4 py-8 sm:px-8 sm:py-10"}>
       <p className={`text-center text-sm font-medium ${compact ? "text-[#c9d4ff]" : "text-[#3d4d66]"}`}>{title}</p>
-      <div className={compact ? "mt-6 flex flex-col items-center lg:flex-row lg:items-end lg:justify-center" : "mt-7 flex flex-col items-center gap-8 lg:flex-row lg:items-end lg:justify-center"}>
-        <div className={compact ? "w-full lg:min-w-0 lg:flex-1" : undefined}>
+      <div className={compact ? "mt-6 flex flex-col items-center" : "mt-7 flex flex-col items-center gap-8 lg:flex-row lg:items-end lg:justify-center"}>
+        <div className={compact ? "w-full" : undefined}>
           <MonitorFrame src={monitor.src} alt={monitor.alt} label="PC 웹" wide={compact} onDark={compact} />
         </div>
-        <div className={compact ? "z-10 -mt-8 lg:-ml-20 lg:mb-8 lg:mt-0" : undefined}>
-          <PhoneFrame src={phone.src} alt={phone.alt} label="모바일 웹" wide={compact} onDark={compact} />
+        <div className={compact ? "z-10 -mt-6 self-end pr-2 sm:-mt-10" : undefined}>
+          <PhoneFrame
+            src={phone.src}
+            alt={phone.alt}
+            label="모바일 웹"
+            wide={compact}
+            onDark={compact}
+            frameClass={compact ? "w-[118px] sm:w-[136px]" : undefined}
+          />
         </div>
       </div>
     </div>
@@ -96,17 +103,23 @@ export function ServiceStage({ compact = false }: { compact?: boolean }) {
   return (
     <div className={compact ? "px-3 py-8 sm:px-4 sm:py-10" : "py-2"}>
       <p className="text-center text-sm font-medium text-[#c9d4ff]">PC 웹 · 모바일 웹 · Android 앱</p>
-      <div className="mt-6 flex flex-col items-center lg:flex-row lg:items-end lg:justify-center">
-        <div className="w-full lg:min-w-0 lg:flex-1">
+      <div className={compact ? "mt-6 flex flex-col items-center" : "mt-6 flex flex-col items-center lg:flex-row lg:items-end lg:justify-center"}>
+        <div className={compact ? "w-full" : "w-full lg:min-w-0 lg:flex-1"}>
           <MonitorFrame src={judoImages.webHome} alt="주도섹터 PC 웹 홈" label="PC 웹" wide onDark />
         </div>
-        <div className="z-10 mt-6 flex flex-col items-center gap-5 sm:flex-row sm:justify-center sm:gap-4 lg:-ml-6 lg:mb-8 lg:mt-0">
+        <div
+          className={
+            compact
+              ? "z-10 -mt-4 flex items-end justify-center gap-3 self-end pr-2 sm:-mt-8 sm:gap-4"
+              : "z-10 mt-6 flex flex-col items-center gap-5 sm:flex-row sm:justify-center sm:gap-4 lg:-ml-6 lg:mb-8 lg:mt-0"
+          }
+        >
           <PhoneFrame
             src={judoImages.webMobile}
             alt="주도섹터 모바일 웹 홈"
             label="모바일 웹"
             onDark
-            frameClass="w-[168px] sm:w-[176px]"
+            frameClass={compact ? "w-[108px] sm:w-[124px]" : "w-[168px] sm:w-[176px]"}
           />
           <PhoneFrame
             src={judoImages.androidHome}
@@ -114,7 +127,7 @@ export function ServiceStage({ compact = false }: { compact?: boolean }) {
             label="Android 앱"
             onDark
             aspect="9/16"
-            frameClass="w-[168px] sm:w-[188px]"
+            frameClass={compact ? "w-[108px] sm:w-[128px]" : "w-[168px] sm:w-[188px]"}
           />
         </div>
       </div>

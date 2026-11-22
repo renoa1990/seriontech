@@ -138,13 +138,17 @@ export function HomeContent({ framed = false }: { framed?: boolean }) {
       {framed ? null : (
         <section id="work" className="scroll-mt-24 border-t border-white/10">
           <Container className="py-14 lg:py-20">
-            <p className="kicker">자체 제작</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">세리온테크 공식 사이트</h2>
-            <div className="mt-8">
-              <OwnSite />
-            </div>
-            <div className="mt-10">
-              <JudoSectorCard />
+            <p className="kicker">제작 사례</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">포트폴리오</h2>
+            <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:grid-rows-[auto_auto_auto] lg:gap-x-8 lg:gap-y-5">
+              <div className="grid grid-rows-[auto_auto_auto] gap-y-4 lg:row-span-3 lg:grid-rows-subgrid">
+                <h3 className="text-2xl font-semibold tracking-[-0.03em]">세리온테크 공식 사이트</h3>
+                <OwnSite />
+              </div>
+              <div className="grid grid-rows-[auto_auto_auto] gap-y-4 lg:row-span-3 lg:grid-rows-subgrid">
+                <h3 className="text-2xl font-semibold tracking-[-0.03em]">주도섹터 주식 시황</h3>
+                <JudoSectorCard />
+              </div>
             </div>
             <h2 className="mt-16 text-3xl font-semibold tracking-[-0.04em]">작업 예시</h2>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
