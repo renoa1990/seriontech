@@ -35,6 +35,10 @@ export const judoImages = {
   androidGainers: "/images/portfolio/judosector/android-gainers.png",
   androidSectors: "/images/portfolio/judosector/android-sectors.png",
   androidSchedule: "/images/portfolio/judosector/android-schedule.png",
+  adminHome: "/images/portfolio/judosector/web-pc-admin-home.png",
+  adminNotices: "/images/portfolio/judosector/web-pc-admin-notices.png",
+  adminSectors: "/images/portfolio/judosector/web-pc-admin-sectors.png",
+  adminSchedule: "/images/portfolio/judosector/web-pc-admin-schedule.png",
   system: "/images/portfolio/judosector/system-overview.svg",
 } as const;
 
@@ -120,6 +124,16 @@ export const judoFeatures = [
     webAlt: "주도섹터 PC 웹의 지난시황 목록",
     phoneAlt: "주도섹터 모바일 웹의 지난시황 목록",
   },
+  {
+    title: "관리 화면",
+    text: "공지, 종목 섹터, 특징주 뉴스, 스케줄을 웹 관리 화면에서 작성하고 수정합니다. 주소는 judosector.com/admin이고, 로그인한 관리자만 열 수 있습니다.",
+    shots: [
+      { src: judoImages.adminHome, alt: "주도섹터 관리 화면 개요", label: "개요" },
+      { src: judoImages.adminNotices, alt: "주도섹터 관리 화면의 공지 목록", label: "공지" },
+      { src: judoImages.adminSectors, alt: "주도섹터 관리 화면의 종목 섹터", label: "종목 섹터" },
+      { src: judoImages.adminSchedule, alt: "주도섹터 관리 화면의 스케줄", label: "스케줄" },
+    ],
+  },
 ] as const;
 
 export const judoStack = [
@@ -139,4 +153,5 @@ export const judoCapabilities = [
   ["데이터 보관", "뉴스는 SQLite, 지난시황과 섹터 목록은 파일로 운영합니다."],
   ["서버 운영", "API 프로세스를 서버에서 실행하고, 웹은 Vercel에서 서비스합니다."],
   ["기능 개선", "공지와 앱 버전을 통해 뉴스, 스케줄, 화면 배치 같은 기능을 운영 중에 업데이트하고 있습니다."],
+  ["관리 화면", "공지, 종목 섹터, 특징주 뉴스, 스케줄을 로그인한 웹 관리 화면에서 수정합니다."],
 ] as const;

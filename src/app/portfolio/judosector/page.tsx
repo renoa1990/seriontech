@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/Container";
-import { ScreenPair, ServiceStage } from "@/components/DeviceStage";
+import { ScreenPair, ServiceStage, WebShot } from "@/components/DeviceStage";
 import { PageHero } from "@/components/PageHero";
 import {
   judoCapabilities,
@@ -69,6 +69,7 @@ export default function JudoSectorPage() {
             {judoFeatures.map((feature, index) => {
               const web = "web" in feature ? feature.web : undefined;
               const phone = "phone" in feature ? feature.phone : undefined;
+              const shots = "shots" in feature ? feature.shots : undefined;
               return (
                 <article key={feature.title} className="panel grid gap-5 p-5 sm:p-6">
                   <div>
@@ -76,14 +77,22 @@ export default function JudoSectorPage() {
                     <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em]">{feature.title}</h3>
                     <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">{feature.text}</p>
                   </div>
-                  <ScreenPair
-                    web={web}
-                    phone={phone}
-                    webAlt={"webAlt" in feature ? feature.webAlt : undefined}
-                    phoneAlt={"phoneAlt" in feature ? feature.phoneAlt : undefined}
-                    phoneLabel={"phoneLabel" in feature ? feature.phoneLabel : undefined}
-                    phoneAspect={"phoneAspect" in feature ? feature.phoneAspect : undefined}
-                  />
+                  {shots ? (
+                    <div className="grid gap-5 sm:grid-cols-2">
+                      {shots.map((shot) => (
+                        <WebShot key={shot.label} src={shot.src} alt={shot.alt} label={shot.label} />
+                      ))}
+                    </div>
+                  ) : (
+                    <ScreenPair
+                      web={web}
+                      phone={phone}
+                      webAlt={"webAlt" in feature ? feature.webAlt : undefined}
+                      phoneAlt={"phoneAlt" in feature ? feature.phoneAlt : undefined}
+                      phoneLabel={"phoneLabel" in feature ? feature.phoneLabel : undefined}
+                      phoneAspect={"phoneAspect" in feature ? feature.phoneAspect : undefined}
+                    />
+                  )}
                 </article>
               );
             })}

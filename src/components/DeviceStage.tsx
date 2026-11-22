@@ -135,6 +135,29 @@ export function ServiceStage({ compact = false }: { compact?: boolean }) {
   );
 }
 
+export function WebShot({
+  src,
+  alt,
+  label,
+  className = "w-full",
+}: {
+  src: string;
+  alt: string;
+  label: string;
+  className?: string;
+}) {
+  return (
+    <figure className={className}>
+      <div className="rounded-xl bg-[#1b2230] p-2 shadow-[0_16px_40px_rgba(0,0,0,0.35)] ring-1 ring-white/12">
+        <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-[#070b14]">
+          <Image src={src} alt={alt} fill sizes="(min-width: 1024px) 480px, 92vw" className="object-cover object-top" />
+        </div>
+      </div>
+      <figcaption className="mt-2 text-center text-xs font-medium text-muted">{label}</figcaption>
+    </figure>
+  );
+}
+
 export function ScreenPair({
   web,
   phone,
@@ -154,14 +177,12 @@ export function ScreenPair({
   return (
     <div className={`flex flex-col items-center gap-5 ${web && phone ? "lg:flex-row lg:items-end" : ""}`}>
       {web ? (
-        <figure className={phone ? "w-full flex-1" : "mx-auto w-full max-w-[920px]"}>
-          <div className="rounded-xl bg-[#1b2230] p-2 shadow-[0_16px_40px_rgba(0,0,0,0.35)] ring-1 ring-white/12">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-[#070b14]">
-              <Image src={web} alt={webAlt ?? ""} fill sizes="(min-width: 1024px) 720px, 92vw" className="object-cover object-top" />
-            </div>
-          </div>
-          <figcaption className="mt-2 text-center text-xs font-medium text-muted">PC 웹</figcaption>
-        </figure>
+        <WebShot
+          src={web}
+          alt={webAlt ?? ""}
+          label="PC 웹"
+          className={phone ? "w-full flex-1" : "mx-auto w-full max-w-[920px]"}
+        />
       ) : null}
       {phone ? (
         <PhoneFrame src={phone} alt={phoneAlt ?? ""} label={phoneLabel} aspect={phoneAspect} onDark frameClass="w-[150px] sm:w-[168px]" />
