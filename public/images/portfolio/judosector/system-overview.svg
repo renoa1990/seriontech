@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">주도섹터 시스템 구성</title>
+  <desc id="desc">웹과 Android 앱이 같은 API를 쓰고, API가 LS증권 OpenAPI와 파일 저장소를 사용합니다.</desc>
+  <rect width="1200" height="640" fill="#070B14"/>
+  <g fill="none" stroke="#24344E" stroke-width="1">
+    <rect x="48" y="48" width="520" height="250" rx="0"/>
+    <rect x="632" y="48" width="520" height="250" rx="0"/>
+    <rect x="250" y="360" width="700" height="220" rx="0"/>
+  </g>
+  <text x="72" y="88" fill="#9EB6FF" font-family="Pretendard, sans-serif" font-size="16">서비스</text>
+  <text x="72" y="128" fill="#FFFFFF" font-family="Pretendard, sans-serif" font-size="28">웹</text>
+  <text x="72" y="164" fill="#9AABBE" font-family="Pretendard, sans-serif" font-size="18">Next.js · React · TypeScript · MUI</text>
+  <text x="72" y="198" fill="#9AABBE" font-family="Pretendard, sans-serif" font-size="18">judosector.com</text>
+  <text x="72" y="232" fill="#9AABBE" font-family="Pretendard, sans-serif" font-size="18">배포: Vercel</text>
+  <text x="656" y="88" fill="#9EB6FF" font-family="Pretendard, sans-serif" font-size="16">서비스</text>
+  <text x="656" y="128" fill="#FFFFFF" font-family="Pretendard, sans-serif" font-size="28">Android 앱</text>
+  <text x="656" y="164" fill="#9AABBE" font-family="Pretendard, sans-serif" font-size="18">Flutter</text>
+  <text x="656" y="198" fill="#9AABBE" font-family="Pretendard, sans-serif" font-size="18">Google Play · com.leadingsector.app</text>
+  <text x="274" y="404" fill="#9EB6FF" font-family="Pretendard, sans-serif" font-size="16">API</text>
+  <text x="274" y="444" fill="#FFFFFF" font-family="Pretendard, sans-serif" font-size="28">FastAPI</text>
+  <text x="274" y="480" fill="#9AABBE" font-family="Pretendard, sans-serif" font-size="18">api.judosector.com · uvicorn · Caddy</text>
+  <text x="274" y="516" fill="#9AABBE" font-family="Pretendard, sans-serif" font-size="18">LS증권 OpenAPI · SQLite 뉴스 · 일별 시황 파일 · 섹터 JSON</text>
+  <path d="M308 298 V360" stroke="#635BFF" stroke-width="2"/>
+  <path d="M892 298 V330 H600 V360" stroke="#635BFF" stroke-width="2"/>
+</svg>

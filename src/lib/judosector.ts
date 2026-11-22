@@ -1,0 +1,142 @@
+export const judoSector = {
+  name: "주도섹터 주식 시황",
+  englishName: "JUDOSECTOR",
+  path: "/portfolio/judosector",
+  url: "https://judosector.com",
+  apiUrl: "https://api.judosector.com",
+  playUrl: "https://play.google.com/store/apps/details?id=com.leadingsector.app&hl=ko",
+  playId: "com.leadingsector.app",
+  title: "국내 주식시장 데이터 분석 및 시황 정보 통합 플랫폼",
+  summary:
+    "국내 주식시장의 거래대금, 등락률, 주도섹터, 투자자별 매매동향을 웹과 Android 앱에서 함께 보여주는 서비스입니다.",
+  intro:
+    "주도섹터는 국내 주식시장의 시장 데이터와 종목 정보를 한 플랫폼에서 보여주는 웹·Android 서비스입니다. 거래대금, 등락률, 주도섹터, 투자자별 매매동향, 특징주 뉴스, 일정, 야간선물, 지난시황을 실제 운영 환경에서 제공하고, 기능을 계속 고치고 있습니다.",
+  capturedOn: "2026-11-22",
+} as const;
+
+export const judoImages = {
+  cover: "/images/portfolio/judosector/cover.png",
+  webHome: "/images/portfolio/judosector/web-pc-home.png",
+  webMobile: "/images/portfolio/judosector/web-mobile-home.png",
+  tradingValue: "/images/portfolio/judosector/web-pc-trading-value.png",
+  gainers: "/images/portfolio/judosector/web-pc-gainers.png",
+  sectors: "/images/portfolio/judosector/web-pc-leading-sectors.png",
+  investors: "/images/portfolio/judosector/web-pc-investors-2.png",
+  investorsMobile: "/images/portfolio/judosector/web-mobile-investors.png",
+  news: "/images/portfolio/judosector/web-pc-news.png",
+  newsMobile: "/images/portfolio/judosector/web-mobile-news.png",
+  schedule: "/images/portfolio/judosector/web-pc-schedule-2.png",
+  overnight: "/images/portfolio/judosector/web-pc-overnight-2.png",
+  overnightMobile: "/images/portfolio/judosector/web-mobile-overnight.png",
+  past: "/images/portfolio/judosector/web-pc-past-2.png",
+  pastMobile: "/images/portfolio/judosector/web-mobile-past.png",
+  androidHome: "/images/portfolio/judosector/android-home.png",
+  androidTrading: "/images/portfolio/judosector/android-trading-value.png",
+  androidGainers: "/images/portfolio/judosector/android-gainers.png",
+  androidSectors: "/images/portfolio/judosector/android-sectors.png",
+  androidSchedule: "/images/portfolio/judosector/android-schedule.png",
+  system: "/images/portfolio/judosector/system-overview.svg",
+} as const;
+
+export const judoFacts = [
+  ["프로젝트명", "주도섹터 주식 시황"],
+  ["서비스 주소", "judosector.com"],
+  ["개발 유형", "자체 개발"],
+  ["서비스 형태", "Web / Android App"],
+  ["개발 및 운영", "세리온테크"],
+  ["프로젝트 상태", "실제 운영 중"],
+] as const;
+
+export const judoFeatures = [
+  {
+    title: "거래대금 상위 종목",
+    text: "당일 거래대금이 많은 종목 순위를 보여 줍니다. 시세는 LS증권 OpenAPI에서 받아 API로 제공합니다.",
+    web: judoImages.tradingValue,
+    phone: judoImages.androidTrading,
+    webAlt: "주도섹터 PC 웹의 거래대금 상위 종목",
+    phoneAlt: "주도섹터 Android 앱의 거래대금 상위 종목",
+  },
+  {
+    title: "등락률 상위 종목",
+    text: "등락률이 큰 종목을 따로 모아 보여 줍니다. 웹의 등락률 메뉴와 Android 앱에서 같은 API를 사용합니다.",
+    web: judoImages.gainers,
+    phone: judoImages.androidGainers,
+    webAlt: "주도섹터 PC 웹의 등락률 상위 종목",
+    phoneAlt: "주도섹터 Android 앱의 등락률 상위 종목",
+  },
+  {
+    title: "주도섹터 분석",
+    text: "종목별 섹터 목록과 거래대금·등락 데이터를 계산해, 장중 관심이 몰리는 업종을 보여 줍니다.",
+    web: judoImages.sectors,
+    phone: judoImages.androidSectors,
+    webAlt: "주도섹터 PC 웹의 업종 분석",
+    phoneAlt: "주도섹터 Android 앱의 업종 분석",
+  },
+  {
+    title: "투자자별 매매동향",
+    text: "코스피와 코스닥의 개인·외국인·기관 순매수를 홈과 그외시황에서 보여 줍니다.",
+    web: judoImages.investors,
+    phone: judoImages.investorsMobile,
+    phoneLabel: "모바일 웹",
+    phoneAspect: "9/19.5",
+    webAlt: "주도섹터 그외시황의 투자자별 순매수",
+    phoneAlt: "주도섹터 모바일 웹의 투자자별 순매수",
+  },
+  {
+    title: "특징주 뉴스",
+    text: "오전 7시부터 저녁 8시까지 LS증권 OpenAPI 웹소켓으로 뉴스를 받습니다. 제목에 [특징주]가 있고 종목이 연결된 기사만 골라, 본문에서 종목명과 출처를 읽어 SQLite에 저장한 뒤 웹과 Android 앱의 뉴스 화면에 보여 줍니다. 아래 기사는 그 목록 화면을 보여 주려고 넣은 예시입니다.",
+    web: judoImages.news,
+    phone: judoImages.newsMobile,
+    phoneLabel: "모바일 웹",
+    phoneAspect: "9/19.5",
+    webAlt: "주도섹터 PC 웹의 특징주 뉴스 목록",
+    phoneAlt: "주도섹터 모바일 웹의 특징주 뉴스 목록",
+  },
+  {
+    title: "주요 일정",
+    text: "신규상장, 한국·미국 경제 지표, 실적 발표, 옵션 만기 일정을 모아 스케줄 화면에서 보여 줍니다.",
+    web: judoImages.schedule,
+    phone: judoImages.androidSchedule,
+    webAlt: "주도섹터 PC 웹의 일정 화면",
+    phoneAlt: "주도섹터 Android 앱의 일정 화면",
+  },
+  {
+    title: "야간선물",
+    text: "코스피200 야간선물 시세와 3분봉 차트를 웹과 앱에서 보여 줍니다.",
+    web: judoImages.overnight,
+    phone: judoImages.overnightMobile,
+    phoneLabel: "모바일 웹",
+    phoneAspect: "9/19.5",
+    webAlt: "주도섹터 PC 웹의 코스피200 야간선물 차트",
+    phoneAlt: "주도섹터 모바일 웹의 코스피200 야간선물 차트",
+  },
+  {
+    title: "지난시황과 시황 가이드",
+    text: "날짜별 지난시황을 파일로 남겨 두고, 용어와 화면 사용법은 가이드와 FAQ로 안내합니다.",
+    web: judoImages.past,
+    phone: judoImages.pastMobile,
+    phoneLabel: "모바일 웹",
+    phoneAspect: "9/19.5",
+    webAlt: "주도섹터 PC 웹의 지난시황 목록",
+    phoneAlt: "주도섹터 모바일 웹의 지난시황 목록",
+  },
+] as const;
+
+export const judoStack = [
+  ["Android", "Flutter. Google Play에 배포하며 패키지명은 com.leadingsector.app입니다."],
+  ["웹", "Next.js, React, TypeScript, MUI. 운영 사이트는 Vercel에 배포되어 있습니다."],
+  ["API", "Python FastAPI와 uvicorn. 주소는 api.judosector.com이고, HTTPS는 Caddy로 연결합니다."],
+  ["데이터", "특징주 뉴스는 SQLite에 보관합니다. 지난시황과 섹터 목록은 파일로 관리합니다."],
+  ["수집", "LS증권 OpenAPI를 주기적으로 조회합니다. 일정은 거래소 일정, 한국은행, FOMC, Nasdaq 캘린더를 모읍니다."],
+  ["서버", "API는 Linux 서버에서 동작합니다. 웹과 앱이 이 API를 함께 호출합니다."],
+] as const;
+
+export const judoCapabilities = [
+  ["웹서비스 기획과 개발", "시황 메뉴, 지난시황, 가이드, 공지, 문의 페이지까지 웹으로 제공하고 있습니다."],
+  ["Android 개발과 배포", "Flutter 앱을 만들어 Google Play에 올렸고, 웹과 같은 시황 메뉴를 제공합니다."],
+  ["웹과 앱 연동", "두 클라이언트가 api.judosector.com의 같은 시장 API를 사용합니다."],
+  ["API와 데이터 처리", "거래대금, 등락률, 주도섹터, 투자자 동향, 야간선물, 뉴스, 일정을 API로 가공합니다."],
+  ["데이터 보관", "뉴스는 SQLite, 지난시황과 섹터 목록은 파일로 운영합니다."],
+  ["서버 운영", "API 프로세스를 서버에서 실행하고, 웹은 Vercel에서 서비스합니다."],
+  ["기능 개선", "공지와 앱 버전을 통해 뉴스, 스케줄, 화면 배치 같은 기능을 운영 중에 업데이트하고 있습니다."],
+] as const;

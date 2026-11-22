@@ -345,9 +345,10 @@ export const principles = [
 ] as const;
 
 export const stack = [
-  { emoji: "🖥️", label: "화면", value: "Next.js, React, TypeScript" },
-  { emoji: "⚙️", label: "서버", value: "Node.js, Next.js. 필요할 때는 NestJS" },
-  { emoji: "🗄️", label: "데이터", value: "PostgreSQL, MySQL, Prisma. 필요할 때는 Redis" },
+  { emoji: "🖥️", label: "화면", value: "Next.js, React, TypeScript, MUI" },
+  { emoji: "📱", label: "앱", value: "Flutter (Android). 앱이 필요할 때 사용합니다" },
+  { emoji: "⚙️", label: "서버", value: "Node.js, Next.js, Python FastAPI. 필요할 때는 NestJS" },
+  { emoji: "🗄️", label: "데이터", value: "PostgreSQL, MySQL, Prisma, SQLite. 필요할 때는 Redis" },
   { emoji: "☁️", label: "배포", value: "Vercel, Cloudflare. 규모가 커지면 AWS" },
 ] as const;
 

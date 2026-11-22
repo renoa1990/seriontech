@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import { JudoSectorCard } from "@/components/JudoSectorCard";
 import { OwnSite } from "@/components/OwnSite";
 import { PageHero } from "@/components/PageHero";
 import { WorkSamples } from "@/components/WorkSamples";
@@ -64,9 +65,12 @@ export default function AboutPage() {
           <div className="mt-6">
             <OwnSite />
           </div>
+          <div className="mt-10">
+            <JudoSectorCard />
+          </div>
           <h2 className="mt-12 text-3xl font-semibold tracking-[-0.03em]">작업 예시</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
-            고객에게 납품한 사례가 아닙니다. 만들 수 있는 화면의 예시이고, 눌러 볼 수 있는 데모는 준비가 끝나면 올립니다.
+            의뢰하시면 관리자, 예약, 업무 자동화처럼 업무에 쓰는 화면을 만듭니다. 아래는 그 작업 예시입니다.
           </p>
           <div className="mt-6">
             <WorkSamples />

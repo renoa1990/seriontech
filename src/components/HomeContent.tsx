@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { DashboardPreview } from "@/components/DashboardPreview";
+import { JudoSectorCard } from "@/components/JudoSectorCard";
 import { OwnSite } from "@/components/OwnSite";
 import { WorkSamples } from "@/components/WorkSamples";
 import {
@@ -56,8 +57,13 @@ export function HomeContent({ framed = false }: { framed?: boolean }) {
               </Link>
             </div>
             <ul className="mt-8 grid grid-cols-2 gap-2">
-              {stack.map((item) => (
-                <li key={item.label} className="rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-xs leading-5 text-[#c5d0df]">
+              {stack.map((item, index) => (
+                <li
+                  key={item.label}
+                  className={`rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-xs leading-5 text-[#c5d0df] ${
+                    index === stack.length - 1 && stack.length % 2 === 1 ? "col-span-2" : ""
+                  }`}
+                >
                   <span className="block text-[11px] text-white/45">{item.label}</span>
                   {item.value.split(". ")[0]}
                 </li>
@@ -137,10 +143,12 @@ export function HomeContent({ framed = false }: { framed?: boolean }) {
             <div className="mt-8">
               <OwnSite />
             </div>
+            <div className="mt-10">
+              <JudoSectorCard />
+            </div>
             <h2 className="mt-16 text-3xl font-semibold tracking-[-0.04em]">작업 예시</h2>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
-              고객에게 납품한 사례가 아닙니다. 관리자, 예약, 업무 자동화처럼 만들 수 있는 화면의 예시입니다. 눌러 볼
-              수 있는 데모는 준비가 끝나면 올립니다.
+              의뢰하시면 관리자, 예약, 업무 자동화처럼 업무에 쓰는 화면을 만듭니다. 아래는 그 작업 예시입니다.
             </p>
             <div className="mt-8">
               <WorkSamples />
@@ -173,7 +181,7 @@ export function HomeContent({ framed = false }: { framed?: boolean }) {
             <p className="kicker">예시</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em]">만들 수 있는 예</h2>
             <p className="mt-3 max-w-md text-sm leading-7 text-[#c5d0df]">
-              고객에게 납품한 사례가 아닙니다. 매장과 팀이 손으로 하던 일을 웹으로 옮길 수 있는 예입니다.
+              의뢰하시면 매장과 팀이 손으로 하던 일을 웹으로 옮기는 작업을 합니다. 아래는 그 작업 예시입니다.
             </p>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {systemExamples.map((item) => (
